@@ -3,3 +3,19 @@
 @import '../node_modules/@tc/tc-ngx-general/assets/tc-styles.css';
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.scrollable-child {
+    overflow-y:auto;
+  }
+
+  .jShadow {
+    box-shadow: 8px 0 5px black, -8px 0 5px black;
+  }
+
+  .flex-and-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }

@@ -1,1 +1,57 @@
-<p>trooper-match works!</p>
+    <div class="matchCenter">
+        <button id="gridSubmit" class="btn btn-primary" (click)="generateGame()" style="padding: 20px">Generate Game</button>
+    </div>
+    <div class="matchCenter">
+        <table id="game" *ngIf="showTable">
+            <tr>
+                <td>
+                    <img width="100" height="100" [src]="doubleImageIndex[0][0].img" (click)="onSelect('0:0')">
+                </td>
+                <td>
+                    <img width="100" height="100" [src]="doubleImageIndex[1][0].img" (click)="onSelect('1:0')">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img width="100" height="100" [src]="doubleImageIndex[0][1].img" (click)="onSelect('0:1')">
+                </td>
+                <td>
+                    <img width="100" height="100" [src]="doubleImageIndex[1][1].img" (click)="onSelect('1:1')">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img width="100" height="100" [src]="doubleImageIndex[0][2].img" (click)="onSelect('0:2')">
+                </td>
+                <td>
+                    <img width="100" height="100" [src]="doubleImageIndex[1][2].img" (click)="onSelect('1:2')">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img width="100" height="100" [src]="doubleImageIndex[0][3].img" (click)="onSelect('0:3')">
+                </td>
+                <td>
+                    <img width="100" height="100" [src]="doubleImageIndex[1][3].img" (click)="onSelect('1:3')">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img width="100" height="100" [src]="doubleImageIndex[0][4].img" (click)="onSelect('0:4')">
+                </td>
+                <td>
+                    <img width="100" height="100" [src]="doubleImageIndex[1][4].img" (click)="onSelect('1:4')">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div 
+        class="header-padder"
+        *ngIf="showMessage"
+    >
+        <h3 id="message" >Congradulations! You completed this game in {{counter}} tries!<br>Press 'Generate Game' to play again!</h3>
+    </div>

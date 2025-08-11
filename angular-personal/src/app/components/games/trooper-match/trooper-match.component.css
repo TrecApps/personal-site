@@ -1,0 +1,24 @@
+.matchCenter {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.header-padder {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    /* background: rgb(63,227,248);
+    background: linear-gradient(90deg, rgba(63,227,248,1) 0%, rgba(8,251,254,1) 10%, rgba(0,255,255,1) 90%, rgba(63,227,248,1) 100%);  */
+
+    border: 3px solid black;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+}
+
+.header-padder h3 {
+    text-align: center;
+}

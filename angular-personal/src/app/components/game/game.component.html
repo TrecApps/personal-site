@@ -1,1 +1,5 @@
-<p>game works!</p>
+<div class="container">
+    <lib-tab [tabs]="tabs">
+        <app-trooper-match *ngIf="activeTab == 'tm'"></app-trooper-match>
+    </lib-tab>  
+</div>
