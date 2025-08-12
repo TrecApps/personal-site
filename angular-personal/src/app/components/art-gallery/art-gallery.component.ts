@@ -127,11 +127,13 @@ export class ArtGalleryComponent implements AfterContentInit{
     this.currentIndex = index;
 
     let filteredImages = this.imageFilter.transform(this.images, this.showSelfArt, this.showCommissions, this.searchTerm)
-    if(this.currentIndex == filteredImages.length - 1)
-      {
-        this.indexIsFinal = true;
-        return;
-      }
+    // if(this.currentIndex == filteredImages.length - 1)
+    //   {
+    //     this.indexIsFinal = true;
+    //     return;
+    //   }
+
+    this.indexIsFinal = this.currentIndex == filteredImages.length - 1;
   }
 
   hideGallery(){

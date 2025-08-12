@@ -1,5 +1,5 @@
 import { CommonModule, NgClass } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { PopupComponent, StylesService } from '@tc/tc-ngx-general';
 import { ColorOption, ColorPanelComponent } from './components/color-panel/color-panel.component';
@@ -11,7 +11,7 @@ import { ColorOption, ColorPanelComponent } from './components/color-panel/color
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewChecked {
   title = 'angular-personal';
 
   ss: StylesService;
@@ -21,6 +21,14 @@ export class AppComponent implements OnInit {
   constructor(ss: StylesService) {
     this.ss = ss;
   }
+  ngAfterViewChecked(): void {
+    if(this.colorStyleCheck)
+      this.colorStyleCheck.nativeElement.checked = this.ss.isDark;
+  }
+
+  @ViewChild('colorStyleCheck')
+  colorStyleCheck?: ElementRef<HTMLInputElement>;
+
 
 toggleNavLinks(){
   let navLinks: HTMLCollectionOf<Element> = document.getElementsByClassName('nav-link');
@@ -30,7 +38,10 @@ toggleNavLinks(){
 
     if(!navLink) continue;
 
-    navLink.classList.toggle('dark-mode-link');
+    if(this.ss.isDark)
+      navLink.classList.add('dark-mode-link');
+    else
+      navLink.classList.remove('dark-mode-link');
   }
 }
 
@@ -48,6 +59,8 @@ toggleNavLinks(){
 
       this.toggleNavLinks();
     }
+
+    
   }
 
       colorList: ColorOption[] = [

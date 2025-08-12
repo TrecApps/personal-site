@@ -61,7 +61,7 @@
     flex-wrap: wrap;
     justify-content: center; 
     gap: 10px;
-    margin-left: -15px;
+    padding: 0;
 }
 
 .image-gal > li {
@@ -122,6 +122,9 @@
     justify-content: center;
     background-color: rgba(10,10,10, 0.5);
     position: relative;
+
+    flex-shrink: 1;
+  overflow: scroll;
 }
 
 .image-viewer img {

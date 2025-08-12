@@ -1,16 +1,12 @@
 <div appElementContainer class="container">
 
-    <ul style="padding-bottom: 10px;">
-        <li class="optionList">
-            <button style="width:80%" class="btn btn-info" (click)="doShowSelfArt()">Self Art</button>
-        </li>
-        <li class="optionList">
-            <button style="width:80%" class="btn btn-info" (click)="doShowBoth()">All Art</button>
-        </li>
-        <li class="optionList">
-            <button style="width:80%" class="btn btn-info" (click)="doShowCommissions()">Commissioned Art</button>
-        </li>
-    </ul>
+    <div class="flex-and-center" style="gap: 5px;">
+        <button class="btn btn-info" (click)="doShowSelfArt()">Self Art</button>
+        <button class="btn btn-info" (click)="doShowBoth()">All Art</button>
+        <button class="btn btn-info" (click)="doShowCommissions()">Commissioned Art</button>
+    </div>
+
+
     <div style="gap:15px; flex-wrap: wrap; margin-bottom: 10px;" class="flex-and-center" *ngIf="imageWidth >= 500">
         <div class="form-check">
             <input id="galleryT" class="form-check-input" type="radio" formGroup="galleryType" name="galleryType" (click)="setUseGallery(true)">
@@ -72,7 +68,9 @@
     <button *ngIf="!showPanel" class="btn btn-primary act-search" (click)="setImageEntry(undefined)">Show Search</button>
     
     <div [@onShowGallery]="showPanel ? 'doShow' : 'doHide'" 
-        style="border: 3px solid lightgreen; position: fixed; bottom: 0px; width: 100%; margin-left:-15px;max-width:inherit; background-color: rgb(63, 227, 248); z-index: 10; ">
+        style="border: 3px solid lightgreen; position: fixed; bottom: 0px; width: 100%; margin-left:-15px;max-width:inherit; background-color: rgb(63, 227, 248); z-index: 10; max-height: 100vh;
+  display: flex;
+  flex-direction: column;">
         <div *ngIf="selectedImage" class="image-viewer" [style]="'max-height : ' + viewHeight * 0.8 + 'px'">
             <div class="switch-holder">
                 <img src="assets/Less_than.png" style="left:0" class="browse-img" *ngIf="currentIndex" (click)="switchImage(false)">
@@ -85,22 +83,25 @@
             <img [src]="selectedImage.url">
             
         </div>
-        <div style="display: flex; flex-direction: column ;margin:10px; justify-content: center; align-items: center; gap:5px;">
-            <div style="display: flex; flex-direction: row ;margin:5px; justify-content: center; align-items: center; gap:10px;width:100%">
-                <input type="text" class="form-control" placeholder="Search By Tag" [(ngModel)]="searchTerm">
-                <div class="red-button-container" [@xHover]="xButtonHover ? 'hover' : 'leave'" (mouseenter)="setHover(true)" (mouseleave)="setHover(false)">
-                        
-                    <button (click)="hideGallery()"><img src="assets/icons/X-image.png" alt="exit button"></button>
+        <div style="flex-grow: 1;">
+            <div style="display: flex; flex-direction: column ;margin:10px; justify-content: center; align-items: center; gap:5px;">
+                <div style="display: flex; flex-direction: row ;margin:5px; justify-content: center; align-items: center; gap:10px;width:100%">
+                    <input type="text" class="form-control" placeholder="Search By Tag" [(ngModel)]="searchTerm">
+                    <div class="red-button-container" [@xHover]="xButtonHover ? 'hover' : 'leave'" (mouseenter)="setHover(true)" (mouseleave)="setHover(false)">
+                            
+                        <button (click)="hideGallery()"><img src="assets/icons/X-image.png" alt="exit button"></button>
+                    </div>
                 </div>
             </div>
+            
+            <p *ngIf="selectedImage" style="text-align: center; margin:5px;"><b>Title: </b>{{ selectedImage.title }}</p>
+            <p *ngIf="selectedImage" style="text-align: center; margin:5px;"><b>Artist: </b>{{ selectedImage.artist}}</p>
+            <p *ngIf="selectedImage" style="text-align: center; margin:5px;"><b>Desc: </b>{{ selectedImage.desc }}</p>
+            <div *ngIf="selectedImage" style="display: flex; justify-content: center; padding: 5px">
+                <button class="btn btn-info" (click)="setImageEntry(undefined)">Remove Stats</button>
+            </div>
         </div>
-        
-        <p *ngIf="selectedImage" style="text-align: center; margin:5px;"><b>Title: </b>{{ selectedImage.title }}</p>
-        <p *ngIf="selectedImage" style="text-align: center; margin:5px;"><b>Artist: </b>{{ selectedImage.artist}}</p>
-        <p *ngIf="selectedImage" style="text-align: center; margin:5px;"><b>Desc: </b>{{ selectedImage.desc }}</p>
-        <div *ngIf="selectedImage" style="display: flex; justify-content: center; padding: 5px">
-            <button class="btn btn-info" (click)="setImageEntry(undefined)">Remove Stats</button>
-        </div>
+
         
     </div>
     

@@ -1,1 +1,97 @@
-<p>about-me works!</p>
+<div appElementContainer class="container">
+
+    <h1 appElementItem>About John Lawrence Jacko</h1>
+    
+    <div appElementItem>
+        <h3>Contact</h3>
+        <ul>
+            <li *ngFor="let detail of contactInfo">{{detail}}</li>
+        </ul>
+    </div>
+
+    <div appElementItem>
+        <h3>Education</h3>
+        <table>
+            <tr>
+                <th>School, Degree, GPA</th>
+                <th>Years</th>
+            </tr>
+            <tr *ngFor="let school of education">
+                <th>{{school.school}}</th>
+                <th style="margin:10px">{{school.gradYear}}</th>
+            </tr>
+        </table>
+    </div>
+    
+    <div appElementItem>
+        <h3>Certifications</h3>
+        <ul style="display: flex;flex-flow: row wrap;gap: 10px;">
+            <li  class="resumeList" *ngFor="let detail of certifications">{{detail}}</li>
+        </ul>
+    </div>
+
+    
+    <div appElementItem>
+        <h3 (click)="toggleShow(0)"><img [@rotate]="showPProjects ? 'expanded' : 'collapse'" id="exp1" class="expand_icon expand_i_reg" src="assets/Less_than.png"> Personal Projects</h3>
+        <ul [@translate]="showPProjects ? 'expanded': 'collapse'">
+            <li style="list-style-type: none;" *ngFor="let detail of projectsPersonal">
+                <p (click)="toggleWork(detail)">
+                    <b>
+                        <img [@rotate]="detail.show ? 'expanded' : 'collapse'" height="20px" width="20px"
+                    class="expand_icon expand_i_small" src="assets/Less_than.png"> ({{detail.job.gradYear}}) {{detail.job.school}}</b>
+                </p>
+                <ul style="list-style-type: disc;" [@translate]="detail.show ? 'expanded': 'collapse'">
+                    <li *ngFor="let det of detail.details">{{det}}</li>
+                </ul>
+            </li>
+            <li>Evidence for MFA support can be found <a href="https://www.linkedin.com/feed/update/urn:li:activity:7233674723916705792/">at this LinkedIn post</a></li>
+        </ul>
+    </div>
+
+    <div appElementItem>
+        <h3 (click)="toggleShow(1)"><img [@rotate]="showWProjects ? 'expanded' : 'collapse'" id="exp2" class="expand_icon expand_i_reg" src="assets/Less_than.png"> Work Projects</h3>
+        <ul [@translate]="showWProjects ? 'expanded': 'collapse'">
+            <li *ngFor="let detail of projectsWork">{{detail}}</li>
+        </ul>
+    </div>
+
+    <div appElementItem>
+        <h3 (click)="toggleShow(2)"><img [@rotate]="showSProjects ? 'expanded' : 'collapse'" id="exp3" class="expand_icon expand_i_reg" src="assets/Less_than.png"> School Projects</h3>
+        <ul [@translate]="showSProjects ? 'expanded': 'collapse'">
+            <li *ngFor="let detail of projectsSchool">{{detail}}</li>
+        </ul>
+    </div>
+
+    <div appElementItem>
+        <h3 (click)="toggleShow(3)"><img [@rotate]="showOldProjects ? 'expanded' : 'collapse'" id="exp1" class="expand_icon expand_i_reg" src="assets/Less_than.png"> Personal Projects (on-hold)</h3>
+        <ul [@translate]="showOldProjects ? 'expanded': 'collapse'">
+            <li style="list-style-type: none;" *ngFor="let detail of projectsPersonalOld">
+                <p (click)="toggleWork(detail)">
+                    <b>
+                        <img [@rotate]="detail.show ? 'expanded' : 'collapse'" height="20px" width="20px"
+                    class="expand_icon expand_i_small" src="assets/Less_than.png"> ({{detail.job.gradYear}}) {{detail.job.school}}</b>
+                </p>
+                <ul style="list-style-type: disc;" [@translate]="detail.show ? 'expanded': 'collapse'">
+                    <li *ngFor="let det of detail.details">{{det}}</li>
+                </ul>
+            </li>
+        </ul>        
+    </div>
+
+    <div appElementItem>
+        <h3 (click)="toggleShow(4)"><img [@rotate]="showWork ? 'expanded' : 'collapse'" id="exp4" class="expand_icon expand_i_reg" src="assets/Less_than.png"> Work</h3>
+        <ul [@translate]="showWork ? 'expanded': 'collapse'">
+            <li style="list-style-type: none;" *ngFor="let detail of work">
+                <p (click)="toggleWork(detail)">
+                    <b>
+                        <img [@rotate]="detail.show ? 'expanded' : 'collapse'" height="20px" width="20px"
+                    class="expand_icon expand_i_small" src="assets/Less_than.png"> ({{detail.job.gradYear}}) {{detail.job.school}}</b>
+                </p>
+                <ul style="list-style-type: disc;" [@translate]="detail.show ? 'expanded': 'collapse'">
+                    <li *ngFor="let det of detail.details">{{det}}</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</div>
