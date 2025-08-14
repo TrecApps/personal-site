@@ -15,7 +15,7 @@
 
 
 .baseBackground {
-    background-color:rgb(63, 227, 248);
+    /* background-color:rgb(63, 227, 248); */
     background-size: cover; 
     background-repeat: repeat-y; 
     min-height: 100%;
@@ -154,7 +154,7 @@ ul {
     object-fit: cover;
     vertical-align: middle;
     overflow-y: hidden;
-    background-color: cadetblue;
+    /* background-color: cadetblue; */
 }
 
 .imageCard {

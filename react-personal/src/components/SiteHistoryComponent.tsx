@@ -1,92 +1,132 @@
 import { Container } from "react-bootstrap";
 import styles from "./component.module.css";
+import { StylesService } from "@tc/tc-rc-general";
 
 export default function SiteHistoryComponent(){
+
+    const ss: StylesService = StylesService.getInstance();
+
     return (
-<Container style={{
-        backgroundColor:"rgb(63, 227, 248)",
-        backgroundSize: "cover",
-        backgroundRepeat: "repeat-y",
-        minHeight: "100%",
-        overflowY: "auto"
-        }} className={styles.jShadow}>
-    <h4>27.September.2021</h4>
-    <ul>
-        <li>Site Launched</li>
-        <li>Azure Storage Container created</li>
-    </ul>
+<Container 
+    // style={{
+    //     backgroundColor:"rgb(63, 227, 248)",
+    //     backgroundSize: "cover",
+    //     backgroundRepeat: "repeat-y",
+    //     minHeight: "100%",
+    //     overflowY: "auto"
+    // }} 
+    className={ss.getElementContainerClasses('')}
+>
     
-    <h4>24.August.2023</h4>
-    <ul>
-        <li>Styling Improvements</li>
-        <li>Animations added to About Me page</li> 
-        <li>Trooper Match game centered</li>
-        <li>Art Gallery first added with 10 images</li>
-        <li>Site History Section added</li>
-    </ul>
+    <div className={ss.getElementItemClasses('')}>
+        <h4>27.September.2021</h4>
+        <ul>
+            <li>Site Launched</li>
+            <li>Azure Storage Container created</li>
+        </ul>       
+    </div>
+
+    <div className={ss.getElementItemClasses('')}>
+        <h4>24.August.2023</h4>
+        <ul>
+            <li>Styling Improvements</li>
+            <li>Animations added to About Me page</li> 
+            <li>Trooper Match game centered</li>
+            <li>Art Gallery first added with 10 images</li>
+            <li>Site History Section added</li>
+        </ul>
+    </div>
+
     
-    <h4>8.September.2023</h4>
-    <ul>
-        <li>Revamped the Personal Projects section</li>
-        <li>Corrected Tag Overlay on images in Art Gallery</li>
-    </ul>
+    <div className={ss.getElementItemClasses('')}>
+        <h4>8.September.2023</h4>
+        <ul>
+            <li>Revamped the Personal Projects section</li>
+            <li>Corrected Tag Overlay on images in Art Gallery</li>
+        </ul>
+    </div>
+
     
-    <h4>9.November.2023</h4>
-    <ul>
-        <li>Added 9 new images to Art Gallery, featuring Chapters 12-20 of the <i>Thor, Sylene, and the Return of the Queen</i> fanfic</li>
-    </ul>
+    <div className={ss.getElementItemClasses('')}>
+        <h4>9.November.2023</h4>
+        <ul>
+            <li>Added 9 new images to Art Gallery, featuring Chapters 12-20 of the <i>Thor, Sylene, and the Return of the Queen</i> fanfic</li>
+        </ul>
+    </div>
+
     
-    <h4>31.December.2023</h4>
-    <ul>
-        <li>Art Gallery details panel now locked to page bottom</li>
-        <li>Art Gallery now has a tag filter</li>
-        <li>Art Gallery now uses <i>card's</i> as the default image layout</li>
-        <li>Added images to support up to Chapter 30 of the <i>Thor, Sylene, and the Return of the Queen</i> fanfic</li>
-        <li>Note: Changes were complete on December 31, but deployment likely to spill into the new year.</li>
-    </ul>
+    <div className={ss.getElementItemClasses('')}>
+        <h4>31.December.2023</h4>
+        <ul>
+            <li>Art Gallery details panel now locked to page bottom</li>
+            <li>Art Gallery now has a tag filter</li>
+            <li>Art Gallery now uses <i>card's</i> as the default image layout</li>
+            <li>Added images to support up to Chapter 30 of the <i>Thor, Sylene, and the Return of the Queen</i> fanfic</li>
+            <li>Note: Changes were complete on December 31, but deployment likely to spill into the new year.</li>
+        </ul>
+    </div>
+
     
-    <h4>3.April.2024</h4>
-    <ul>
-        <li>Added images to support up to Chapter 40 of the <i>Thor, Sylene, and the Return of the Queen</i> fanfic</li>
-        <li>Updated the Styling of the Trooper Match completion message</li>
-        <li>Art Gallery Panel can now appear and disappear with a smooth animation</li>
-        <li>Upgraded Bootstrap (website styling framework) from 4.0.0 to 5.3.3</li>
-        <li>Using Bootstrap styled radio buttons for Art Gallery Panel</li>
-        <li>Fixed Nav Bar in order to adapt to Bootstrap update</li>
-    </ul>
+    <div className={ss.getElementItemClasses('')}>
+        <h4>3.April.2024</h4>
+        <ul>
+            <li>Added images to support up to Chapter 40 of the <i>Thor, Sylene, and the Return of the Queen</i> fanfic</li>
+            <li>Updated the Styling of the Trooper Match completion message</li>
+            <li>Art Gallery Panel can now appear and disappear with a smooth animation</li>
+            <li>Upgraded Bootstrap (website styling framework) from 4.0.0 to 5.3.3</li>
+            <li>Using Bootstrap styled radio buttons for Art Gallery Panel</li>
+            <li>Fixed Nav Bar in order to adapt to Bootstrap update</li>
+        </ul>
+    </div>
 
-    <h4>11.May.2024</h4>
-    <ul>
-        <li>Migrated from Angular 15.2.0 to Angular 17.0.0</li>
-        <li>Fixed glitch in Match game where a double click renders gameplay unplayable</li>
-        <li>Updated About Me to current location, added App Ecosystem (and Chips Challenge) to Projects list</li>
-        <li>Images begin to shrink once window width shrinks to a certain threshold</li>
-    </ul>
 
-    <h4>27.August.2024</h4>
-    <ul>
-        <li>Disabled Gallery Mode for mobile screens</li>
-        <li>Added new Images to Image Gallery</li>
-        <li>Central Image Viewer and button for initiating image search added</li>
-        <li>Updated Projects in <i>About Me</i>, moved <i>on hold</i> Projects to seperate section</li>
-    </ul>
+    <div className={ss.getElementItemClasses('')}>
+        <h4>11.May.2024</h4>
+        <ul>
+            <li>Migrated from Angular 15.2.0 to Angular 17.0.0</li>
+            <li>Fixed glitch in Match game where a double click renders gameplay unplayable</li>
+            <li>Updated About Me to current location, added App Ecosystem (and Chips Challenge) to Projects list</li>
+            <li>Images begin to shrink once window width shrinks to a certain threshold</li>
+        </ul>
+    </div>
 
-    <h4>17.October.2024</h4>
-    <ul>
-        <li>Added two new Images to Art Gallery</li>
-        <li>Single image view can now move forward and backwards</li>
-        <li>Added CompTia Certification and added months to existing certification list</li>
-    </ul>
 
-    <h4>19.December.2024</h4>
-    <ul>
-        <li>Fixed a glitch in the Art Gallery where the 'next' button permanently disappears when the final image is viewed</li>
-    </ul>
+    <div className={ss.getElementItemClasses('')}>
+        <h4>27.August.2024</h4>
+        <ul>
+            <li>Disabled Gallery Mode for mobile screens</li>
+            <li>Added new Images to Image Gallery</li>
+            <li>Central Image Viewer and button for initiating image search added</li>
+            <li>Updated Projects in <i>About Me</i>, moved <i>on hold</i> Projects to seperate section</li>
+        </ul>
+    </div>
 
-    <h4>13.January.2025 - (do be added when complete)</h4>
-    <ul>
-        <li>Recreated site with React/Vite (you are looking at the React version)</li>
-    </ul>
+
+    <div className={ss.getElementItemClasses('')}>
+        <h4>17.October.2024</h4>
+        <ul>
+            <li>Added two new Images to Art Gallery</li>
+            <li>Single image view can now move forward and backwards</li>
+            <li>Added CompTia Certification and added months to existing certification list</li>
+        </ul>
+    </div>
+
+
+    <div className={ss.getElementItemClasses('')}>
+        <h4>19.December.2024</h4>
+        <ul>
+            <li>Fixed a glitch in the Art Gallery where the 'next' button permanently disappears when the final image is viewed</li>
+        </ul>
+    </div>
+
+
+    <div className={ss.getElementItemClasses('')}>
+        <h4>13.January.2025 - (do be added when complete)</h4>
+        <ul>
+            <li>Recreated site with React/Vite (you are looking at the React version)</li>
+        </ul>
+    </div>
+
     
     </Container>
     );

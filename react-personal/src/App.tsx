@@ -13,7 +13,7 @@ import TrooperMatchComponent from './components/TrooperMatchComponent';
 
 function App() {
 
-    const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
+    const [, forceUpdate] = useReducer(x => x + 1, 0);
 
   function doUpdate() {
     forceUpdate();
@@ -30,10 +30,9 @@ function App() {
     <header>
 
 
-  <div style={{
-    backgroundColor:"rgb(72, 255, 215)",
-    boxShadow: "0 8px 5px 0px black"
-    }}>
+  <div 
+    className={stylesService.getElementContainerClasses('')}
+  >
     <Navbar expand="lg" className="navbar-light">
         <Navbar.Toggle aria-controls="jljacko-navbar-nav" />
         <Navbar.Collapse id="jljacko-navbar-nav">

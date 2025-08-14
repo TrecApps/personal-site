@@ -6,6 +6,7 @@ import styles from "./component.module.css";
 
 
 import lessThan from "../assets/Less_than.png";
+import { StylesService } from "@tc/tc-rc-general";
 
 
 
@@ -32,8 +33,12 @@ export default function AboutMeComponent() {
     const wpProjectRefImg = React.createRef<HTMLImageElement>();
     const wpProjectRefDiv = React.createRef<HTMLUListElement>();
 
+    const ss: StylesService = StylesService.getInstance();
 
-    function toggleRef(imgRef: React.RefObject<HTMLImageElement>, divRef: React.RefObject<HTMLUListElement>) {
+
+    function toggleRef(
+        imgRef: React.RefObject<HTMLImageElement | null>, 
+        divRef: React.RefObject<HTMLUListElement | null>) {
         if(imgRef.current && divRef.current){
             // if(divRef.current.getAttribute("height") == "0"){
             //     divRef.current.setAttribute("height", "auto");
@@ -58,7 +63,7 @@ export default function AboutMeComponent() {
     const educationTsx = education.map((edu: Education) => (
         <tr>
             <th>{edu.school}</th>
-            <th>{edu.gradYear}</th>
+            <th style={{margin: "10px"}}>{edu.gradYear}</th>
         </tr>
     ));
 
@@ -234,81 +239,94 @@ export default function AboutMeComponent() {
 
 
     return (
-        <Container style={{
-            backgroundColor:"rgb(63, 227, 248)",
-            backgroundSize: "cover",
-            backgroundRepeat: "repeat-y",
-            minHeight: "100%"
-            }} className="scrollable-child jShadow">
+        <Container 
+            // style={{
+            // backgroundColor:"rgb(63, 227, 248)",
+            // backgroundSize: "cover",
+            // backgroundRepeat: "repeat-y",
+            // minHeight: "100%"
+            // }} 
+            className={ss.getElementContainerClasses('')}
+        >
 
-            <h1>About John Lawrence Jacko</h1>
+            <h1 className={ss.getElementItemClasses("")}>About John Lawrence Jacko</h1>
 
-            <h3>Contact</h3>
+            <div className={ss.getElementItemClasses("")}>
+                <h3>Contact</h3>
+                <ul>
+                    {contactInfoTsx}
+                </ul>                
+            </div>
 
-            <ul>
-                {contactInfoTsx}
-            </ul>
-
-            <h3>Education</h3>
-            <table>
-                <tr>
-                    <th>School, Degree, GPA</th>
-                    <th>Years</th>
-                </tr>
-                {educationTsx}
-            </table>
-
-            <br/>
-
-            <h3>Certifications</h3>
-            <ul>
-                {certificationsTsx}
-            </ul>
-            <br/>
-            <br/>
-            <br/>
-            <hr/>
-
-            <h3 onClick={() => toggleRef(pProjectRefImg, pProjectRefDiv)}>
-                <img ref={pProjectRefImg} id="exp1" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src={lessThan} /> Personal Projects
-            </h3>
-            <ul ref={pProjectRefDiv} className={styles.basicList}>
-                {personalProjectsTsx}
-                <li>Evidence for MFA support can be found <a href="https://www.linkedin.com/feed/update/urn:li:activity:7233674723916705792/">at this LinkedIn post</a></li>
-            </ul>
-            <br/><hr/>
-
-            <h3 onClick={() => toggleRef(wProjectRefImg, wProjectRefDiv)}>
-                <img ref={wProjectRefImg} id="exp1" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src={lessThan} /> Work Projects
-            </h3>
-            <ul ref={wProjectRefDiv} className={styles.basicList}>
-                { workListTsx}
-            </ul>
-            <br/><hr/>
-
-            <h3 onClick={() => toggleRef(sProjectRefImg, sProjectRefDiv)}>
-                <img ref={sProjectRefImg} id="exp3" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src={lessThan} /> School Projects
-            </h3>
-            <ul ref={sProjectRefDiv} className={styles.basicList}>
-                {schoolListTsx}
-            </ul>
-            <br/><hr/>
-
-            <h3 onClick={()=> toggleRef(oProjectRefImg, oProjectRefDiv)}>
-                <img ref={oProjectRefImg} id="exp1" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src={lessThan} /> Personal Projects (on-hold)
-            </h3>
-            <ul ref={oProjectRefDiv} className={styles.basicList}>
-                {oldProjectsTsx}
-            </ul>
-            <br/><hr/>
+            <div className={ss.getElementItemClasses("")}>
+                <h3>Education</h3>
+                <table>
+                    <tr>
+                        <th>School, Degree, GPA</th>
+                        <th>Years</th>
+                    </tr>
+                    {educationTsx}
+                </table>
+            </div>
 
 
-            <h3 onClick={()=> toggleRef(wpProjectRefImg, wpProjectRefDiv)}>
-                <img ref={wpProjectRefImg} id="exp4" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src={lessThan} /> Work
-            </h3>
-            <ul ref={wpProjectRefDiv} className={styles.basicList}>
-                { workProjectListTsx }
-            </ul>
+            <div className={ss.getElementItemClasses("")}>
+                <h3>Certifications</h3>
+                <ul style={{display: "flex", flexFlow: "row wrap",gap: "10px"}}>
+                    {certificationsTsx}
+                </ul>
+            </div>
+            
+            <div className={ss.getElementItemClasses("")}>
+                <h3 onClick={() => toggleRef(pProjectRefImg, pProjectRefDiv)}>
+                    <img ref={pProjectRefImg} id="exp1" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src={lessThan} /> Personal Projects
+                </h3>
+                <ul ref={pProjectRefDiv} className={styles.basicList}>
+                    {personalProjectsTsx}
+                    <li>Evidence for MFA support can be found <a href="https://www.linkedin.com/feed/update/urn:li:activity:7233674723916705792/">at this LinkedIn post</a></li>
+                </ul>
+            </div>
+            
+            
+
+            <div className={ss.getElementItemClasses("")}>
+                <h3 onClick={() => toggleRef(wProjectRefImg, wProjectRefDiv)}>
+                    <img ref={wProjectRefImg} id="exp1" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src={lessThan} /> Work Projects
+                </h3>
+                <ul ref={wProjectRefDiv} className={styles.basicList}>
+                    { workListTsx}
+                </ul>    
+            </div>
+
+
+            <div className={ss.getElementItemClasses("")}>
+                <h3 onClick={() => toggleRef(sProjectRefImg, sProjectRefDiv)}>
+                    <img ref={sProjectRefImg} id="exp3" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src={lessThan} /> School Projects
+                </h3>
+                <ul ref={sProjectRefDiv} className={styles.basicList}>
+                    {schoolListTsx}
+                </ul>
+            </div>
+
+
+            <div className={ss.getElementItemClasses("")}>
+                <h3 onClick={()=> toggleRef(oProjectRefImg, oProjectRefDiv)}>
+                    <img ref={oProjectRefImg} id="exp1" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src={lessThan} /> Personal Projects (on-hold)
+                </h3>
+                <ul ref={oProjectRefDiv} className={styles.basicList}>
+                    {oldProjectsTsx}
+                </ul>
+            </div>
+
+            <div className={ss.getElementItemClasses("")}>
+                <h3 onClick={()=> toggleRef(wpProjectRefImg, wpProjectRefDiv)}>
+                    <img ref={wpProjectRefImg} id="exp4" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src={lessThan} /> Work
+                </h3>
+                <ul ref={wpProjectRefDiv} className={styles.basicList}>
+                    { workProjectListTsx }
+                </ul>
+            </div>
+
 
 
         </Container>
