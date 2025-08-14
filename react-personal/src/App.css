@@ -1,8 +1,7 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+  width: 100%;
 }
 
 .logo {
@@ -39,4 +38,15 @@
 
 .read-the-docs {
   color: #888;
+}
+
+
+
+
+.jShadow {
+  box-shadow: 8px 0 5px black, -8px 0 5px black;
+}
+
+ul {
+  margin-bottom: 15px;
 }
