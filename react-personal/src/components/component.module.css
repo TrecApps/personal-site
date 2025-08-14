@@ -1,0 +1,303 @@
+.jShadow {
+    box-shadow: 8px 0 5px black, -8px 0 5px black;
+}
+
+.scrollableChild {
+    overflow-y:auto;
+}
+
+.flexAndCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+
+.baseBackground {
+    background-color:rgb(63, 227, 248);
+    background-size: cover; 
+    background-repeat: repeat-y; 
+    min-height: 100%;
+}
+
+.matchCenter {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.headerPadder {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    /* background: rgb(63,227,248);
+    background: linear-gradient(90deg, rgba(63,227,248,1) 0%, rgba(8,251,254,1) 10%, rgba(0,255,255,1) 90%, rgba(63,227,248,1) 100%);  */
+
+    border: 3px solid black;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+}
+
+.headerPadder h3 {
+    text-align: center;
+}
+
+/* For About Me */
+
+.basicImg {
+    transform: rotate(180deg);
+    transition: 0.33s
+}
+
+.basicImg.expandedImg {
+    transform: rotate(270deg)
+}
+
+.basicList {
+    transform: scaleY(0);
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.33s;
+    -webkit-transition: 0.33s;
+    -moz-transition: 0.33s;
+    -o-transition: 0.33s;
+    position: flex;
+    align-content: flex-start;
+    /* position: absolute;
+    top: 0; */
+}
+
+.basicList.expandedList {
+    max-height: 100%;
+    transform: scaleY(1);
+}
+
+
+.resumeList {
+    display: block;
+    width: 50%;
+    min-width: 100px;
+    float: left;
+}
+
+img.expand_icon {
+    border-radius: 50%;
+    transform:rotate(180deg);
+}
+
+img.expand_i_small {
+    width: 25px;
+    height: 25px;
+}
+
+img.expand_i_reg {
+    width: 30px;
+    height: 30px;
+}
+
+ul {
+    margin-bottom: 15px;
+}
+
+
+/** Art Gallery */
+
+.optionList {
+    display: block;
+    width: 33%;
+    min-width: 100px;
+    float: left;
+    display: flex; justify-content: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+/* .imageHolder {
+    display:grid;
+    width:25%;
+    min-width: 250px;
+    float: left;
+} */
+
+.imageEntry {
+   object-fit: cover;
+   width: 100%;
+   height: 100%;
+   vertical-align: middle;
+   border-radius: 5%;
+   
+}
+
+.cardEntryWrapper {
+    width:100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    background: linear-gradient(#4444ff, black) ;
+
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.cardEntry {
+    max-height: 100%; 
+    object-fit: cover;
+    vertical-align: middle;
+    overflow-y: hidden;
+    background-color: cadetblue;
+}
+
+.imageCard {
+    background-color: black;
+    display:inline-block;
+    position: relative;
+    border-radius: 10px;
+}
+
+.imageGal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 10px;
+    margin-left: -15px;
+}
+
+.imageGal > li {
+    position: relative;
+    cursor: pointer;
+
+    flex: 0 1 auto;
+
+    list-style-type: none;
+}
+
+
+.overlay {
+    z-index: 5;
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    max-height: 0;
+    top: 0;
+    left: 0; 
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5%;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.overlay.overExt {
+    max-height: 100%;
+
+}
+
+/* Regular Red Button */
+
+.redButtonContainer {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    transition: background-color 0.33s;
+}
+
+.redButtonContainer button img {
+    width: 30px;
+    height: 30px;
+}
+
+.redButtonContainer button {
+    width:30px;
+    height:30px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.redButtonContainer:hover {
+    background-color: red;
+}
+
+.tcStack {
+    display: flex;
+    flex-direction: column;
+}
+
+.imageViewer {
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(10,10,10, 0.5);
+    position: relative;
+}
+
+.imageViewer img {
+    object-fit: contain;
+    max-width: 100%;
+}
+
+.actSearch {
+    position: fixed;
+    bottom: 10px;
+    right: 20%;
+    border: black 2px solid;
+    z-index: 9;
+}
+
+.switchHolder {
+    position:absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.browseImg {
+    height: 50px;
+    width: 50px;
+}
+
+.browseImg:hover {
+    border: white 3px;
+}
+
+.imgRev {
+    transform: rotate(180deg);
+    right: 0;
+}
+
+.imgToggleBase {
+
+}
+
+.imgToggleBase.imgExtended {
+
+}
+
+
+.imgPanel {
+    transition: 0.5s;
+    /* transform: scaleY(0); */
+    max-height: 0;
+}
+
+.imgPanel.imgPanelExt {
+    max-height: 100%;
+    /* transform: scaleY(1); */
+}
