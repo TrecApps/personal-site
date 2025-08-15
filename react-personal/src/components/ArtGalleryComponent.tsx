@@ -121,20 +121,13 @@ export default function ArtGalleryComponent() {
         }
 
         ref.current.className = classes.join(' ');
-            //ref.current.
     }
 
     function togglePanelView(isViewing: boolean) {
         if(!panelRef.current) return;
-        let classes = panelRef.current.className.split(' ');
-        if(isViewing) {
-            if(!classes.includes(styles.imgPanelExt))
-                classes.push(styles.imgPanelExt);
-        } else {
-            classes = classes.filter((c: string) => c != styles.imgPanelExt);
-        }
 
-        panelRef.current.className = classes.join(' ');
+        panelRef.current.style.maxHeight = isViewing ? '100%' : '0';
+
     }
 
     function setImageEntryCaller(ie: ImageEntry, i: number) {
@@ -307,7 +300,10 @@ export default function ArtGalleryComponent() {
             marginLeft: "-15px",
             maxWidth:"inherit",
             backgroundColor: "rgb(63, 227, 248)",
-            zIndex: 10 }}>
+            zIndex: 10 ,
+            maxHeight: "100vh",
+            display: "flex",
+            flexDirection: "column"}}>
     {
         selectedImage.url.length ?
     
@@ -339,30 +335,34 @@ export default function ArtGalleryComponent() {
     
     }
     
-    <div style={{
-        display: "flex", flexDirection: "column", margin: "10px", justifyContent: "center", alignItems: "center", gap:"5px"}}>
-        <div style={{display: "flex", flexDirection: "row", margin: "5px", justifyContent: "center", alignItems: "center", gap:"10px", width:"100%"}}>
-            <Form.Control type="text" placeholder="Search By Tag" value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} />
-            <div className={styles.redButtonContainer}>
-                    
-                <button onClick={() => togglePanelView(false)}><img src={xImage} alt="exit button" /></button>
+    <div style={{flexGrow: 1}}>
+
+        <div style={{
+            display: "flex", flexDirection: "column", margin: "10px", justifyContent: "center", alignItems: "center", gap:"5px"}}>
+            <div style={{display: "flex", flexDirection: "row", margin: "5px", justifyContent: "center", alignItems: "center", gap:"10px", width:"100%"}}>
+                <Form.Control type="text" placeholder="Search By Tag" value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} />
+                <div className={styles.redButtonContainer}>
+                        
+                    <button onClick={() => togglePanelView(false)}><img src={xImage} alt="exit button" /></button>
+                </div>
             </div>
         </div>
-    </div>
-    
-    {
-        selectedImage.url.length ?
-            (
-                <div>
-            <p style={{textAlign: "center", margin:"5px"}}><b>Title: </b>{ selectedImage.title }</p>
-            <p style={{textAlign: "center", margin:"5px"}}><b>Artist: </b>{ selectedImage.artist}</p>
-            <p style={{textAlign: "center", margin:"5px"}}><b>Desc: </b>{ selectedImage.desc }</p>
-            <div style={{display: "flex", justifyContent: "center", padding: "5px"}}>
-                <Button variant="info" onClick={() => setImageEntryCaller(startImage, 0)}>Remove Stats</Button>
-            </div>
-            </div>
-            ) : ( <div></div>)
-    }
+        
+        {
+            selectedImage.url.length ?
+                (
+                    <div>
+                <p style={{textAlign: "center", margin:"5px"}}><b>Title: </b>{ selectedImage.title }</p>
+                <p style={{textAlign: "center", margin:"5px"}}><b>Artist: </b>{ selectedImage.artist}</p>
+                <p style={{textAlign: "center", margin:"5px"}}><b>Desc: </b>{ selectedImage.desc }</p>
+                <div style={{display: "flex", justifyContent: "center", padding: "5px"}}>
+                    <Button variant="info" onClick={() => setImageEntryCaller(startImage, 0)}>Remove Stats</Button>
+                </div>
+                </div>
+                ) : ( <div></div>)
+        }
+
+        </div>
 
     
     
