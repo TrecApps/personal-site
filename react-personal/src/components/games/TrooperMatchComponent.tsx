@@ -1,16 +1,17 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import styles from "./component.module.css";
+import styles from "../component.module.css";
 import {Button} from 'react-bootstrap';
 
 
 // Images
-import imgDefault from "../assets/trooper/holder.png";
-import img1 from "../assets/trooper/WP_20150107_005.jpg";
-import img2 from "../assets/trooper/076.jpg";
-import img3 from "../assets/trooper/078.jpg";
-import img4 from "../assets/trooper/079.jpg";
-import img5 from "../assets/trooper/080.jpg";
+import imgDefault from "../../assets/trooper/holder.png";
+import img1 from "../../assets/trooper/WP_20150107_005.jpg";
+import img2 from "../../assets/trooper/076.jpg";
+import img3 from "../../assets/trooper/078.jpg";
+import img4 from "../../assets/trooper/079.jpg";
+import img5 from "../../assets/trooper/080.jpg";
+import { StylesService } from "@tc/tc-rc-general";
 
 
 
@@ -43,6 +44,8 @@ export default function TrooperMatchComponent() {
     const [counter, setCounter] = React.useState(0);
 
     const [selectedImg, setSelectedImg] = React.useState(startSelection);
+
+    const ss: StylesService = StylesService.getInstance();
 
     function checkWin()
     {
@@ -181,7 +184,7 @@ export default function TrooperMatchComponent() {
 
 
     return (
-        <Container className={[styles.baseBackground, styles.jShadow].join(' ')} style={{overflowY: "auto"}}>
+        <Container className={ss.getElementItemClasses(styles.baseBackground)} style={{overflowY: "auto"}}>
             <div className={styles.matchCenter}>
                 <Button id="gridSubmit" variant="primary" onClick={generateGame} style={{padding: "20px"}}>Generate Game</Button>
             </div>

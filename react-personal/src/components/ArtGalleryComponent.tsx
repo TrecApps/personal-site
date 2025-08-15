@@ -7,6 +7,7 @@ import images from '../assets/Images.json';
 
 import lessThan from "../assets/Less_than.png";
 import xImage from "../assets/icons/X-image.png";
+import { StylesService } from "@tc/tc-rc-general";
 
 type ImageEntry = {
     url: string;
@@ -50,6 +51,8 @@ export default function ArtGalleryComponent() {
 
 
     const panelRef = React.createRef<HTMLDivElement>();
+
+    const ss: StylesService = StylesService.getInstance();
 
 
     function filterImages(imageList: ImageEntry[]) : ImageEntry[] {
@@ -106,7 +109,8 @@ export default function ArtGalleryComponent() {
 
     //updateSize();
 
-    function toggleTagView(ref: React.RefObject<HTMLDivElement>, isViewing: boolean){
+    function toggleTagView(
+        ref: React.RefObject<HTMLDivElement | null>, isViewing: boolean){
         if(!ref.current) return;
         let classes = ref.current.className.split(' ');
         if(isViewing) {
@@ -178,7 +182,7 @@ export default function ArtGalleryComponent() {
             const divRef = React.createRef<HTMLDivElement>();
 
             return (
-                <li style={{height: galleryImageHeight}}>
+                <li style={{height: galleryImageHeight}} className={ss.getElementItemClasses('')}>
             <div onMouseEnter={()=> toggleTagView(divRef, true)}   onMouseLeave={() => toggleTagView(divRef, false)}
                 style={{
                     height: "100%",
@@ -208,7 +212,7 @@ export default function ArtGalleryComponent() {
             const divRef = React.createRef<HTMLDivElement>();
             
             return (
-                <li>
+                <li  className={ss.getElementItemClasses('')}>
                     <div className={styles.imageCard} style={{ width: cardWidth}}>
                         <div onMouseEnter={()=> toggleTagView(divRef, true)}   onMouseLeave={() => toggleTagView(divRef, false)}
                             className={styles.cardEntryWrapper} onClick={()=> setImageEntryCaller(entry, index)} style={{ height: cardHeight}}>
@@ -236,32 +240,32 @@ export default function ArtGalleryComponent() {
 
 
     return (
-        <Container onLoad={() => updateSize()} style={{
-            backgroundColor:"rgb(63, 227, 248)",
-            backgroundSize: "cover",
-            backgroundRepeat: "repeat-y",
-            minHeight: "100%"}} className={[styles.scrollableChild, styles.jShadow, styles.tcStack].join(' ')}>
+        <Container onLoad={() => updateSize()}
+        //  style={{
+        //     backgroundColor:"rgb(63, 227, 248)",
+        //     backgroundSize: "cover",
+        //     backgroundRepeat: "repeat-y",
+        //     minHeight: "100%"}}
+            className={ss.getElementContainerClasses('')}
+        >
 
-            <ul style={{paddingBottom: "10px"}}>
-                <li className={styles.optionList}>
-                    <Button style={{width:"80%"}} variant="info" onClick={() => {
+            <div className={styles.flexAndCenter} style={{gap: "5px"}}>
+                <Button variant="info" onClick={() => {
                         setShowCommissions(false);
                         setShowSelfArt(true);
                     }}>Self Art</Button>
-                </li>
-                <li className={styles.optionList}>
-                <Button style={{width:"80%"}} variant="info" onClick={() => {
+                <Button variant="info" onClick={() => {
                         setShowCommissions(true);
                         setShowSelfArt(true);
                     }}>All Art</Button>
-                </li>
-                <li className={styles.optionList}>
-                <Button style={{width:"80%"}} variant="info" onClick={() => {
+                <Button variant="info" onClick={() => {
                         setShowCommissions(true);
                         setShowSelfArt(false);
                     }}>Commissioned Art</Button>
-                </li>
-            </ul>
+                
+            </div>
+
+
             <div style={{
                 gap:"15px",
                 flexWrap: "wrap",
@@ -269,16 +273,16 @@ export default function ArtGalleryComponent() {
                 className={styles.flexAndCenter}
                 //  *ngIf="imageWidth >= 500"
                 >
-    <div className="form-check">
-        <Form.Check id="galleryT" type="radio" name="galleryType" checked={ useGallery } onClick={()=> setUseGallery(true)} />
-        <Form.Label for="gelleryT" class="form-check-label">Use Gallery</Form.Label>
-    </div>
-    <div className="form-check">
-        <Form.Check id="galleryT" type="radio" name="galleryType" checked={ !useGallery } onClick={()=> setUseGallery(false)} />
-        <Form.Label for="gelleryT" class="form-check-label">Use Cards</Form.Label>
-    </div>
-</div>
-<br/>
+                <div className="form-check">
+                    <Form.Check id="galleryT" type="radio" name="galleryType" checked={ useGallery } onClick={()=> setUseGallery(true)} />
+                    <Form.Label for="gelleryT" class="form-check-label">Use Gallery</Form.Label>
+                </div>
+                <div className="form-check">
+                    <Form.Check id="galleryT" type="radio" name="galleryType" checked={ !useGallery } onClick={()=> setUseGallery(false)} />
+                    <Form.Label for="gelleryT" class="form-check-label">Use Cards</Form.Label>
+                </div>
+            </div>
+            <br/>
 
 
 

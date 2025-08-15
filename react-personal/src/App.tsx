@@ -9,7 +9,7 @@ import type { AppDispatch } from './services/state-manager';
 import AboutMeComponent from './components/AboutMeComponent';
 import ArtGalleryComponent from './components/ArtGalleryComponent';
 import SiteHistoryComponent from './components/SiteHistoryComponent';
-import TrooperMatchComponent from './components/TrooperMatchComponent';
+import GameComponent from './components/GameComponent';
 
 function App() {
 
@@ -38,7 +38,7 @@ function App() {
         <Navbar.Collapse id="jljacko-navbar-nav">
           <Nav className="me-auto">
               <Nav.Link as={Link} to="/AboutMe">About Me</Nav.Link>
-              <Nav.Link as={Link} to="/Match">Trooper Match</Nav.Link>
+              <Nav.Link as={Link} to="/Games">Trooper Match</Nav.Link>
               <Nav.Link as={Link} to="/Gallery">Art Gallery</Nav.Link>
               <Nav.Link as={Link} to="/History">Site History</Nav.Link>
             
@@ -54,7 +54,7 @@ function App() {
       <Route path="/" element={<Navigate to="AboutMe" replace />} />
 
         <Route path="AboutMe" element={ <AboutMeComponent /> } />
-        <Route path="Match" element={ <TrooperMatchComponent /> } />
+        <Route path="Games" element={ <GameComponent /> } />
       
         <Route path="Gallery" element={ <ArtGalleryComponent /> } />
         <Route path="History" element={ <SiteHistoryComponent /> } />
