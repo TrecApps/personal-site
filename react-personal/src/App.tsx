@@ -31,10 +31,11 @@ function App() {
 
 
   <div 
-    className={stylesService.getElementContainerClasses('')}
+    className={stylesService.getElementContainerClasses('navShadow')}
+    style={{padding: 0}}
   >
-    <Navbar expand="lg" className="navbar-light">
-        <Navbar.Toggle aria-controls="jljacko-navbar-nav" />
+    <Navbar expand="lg" className="navbar-light " style={{padding: "8px 0 8px 5px"}}>
+        <Navbar.Toggle aria-controls="jljacko-navbar-nav"/>
         <Navbar.Collapse id="jljacko-navbar-nav">
           <Nav className="me-auto">
               <Nav.Link as={Link} to="/AboutMe">About Me</Nav.Link>

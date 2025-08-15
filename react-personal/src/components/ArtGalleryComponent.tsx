@@ -225,7 +225,7 @@ export default function ArtGalleryComponent() {
                             </div>
                         </div>
                         <div style={{display: "flex"}}>
-                            <p style={{ textAlign: "center", color:"white" }}><b>Title: </b>{ entry.title }</p>
+                            <p style={{ textAlign: "center" }}><b>Title: </b>{ entry.title }</p>
                         </div>
                     </div>
                 </li>
