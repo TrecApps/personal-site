@@ -5,12 +5,12 @@ import {Button} from 'react-bootstrap';
 
 
 // Images
-import imgDefault from "../../assets/trooper/holder.png";
-import img1 from "../../assets/trooper/WP_20150107_005.jpg";
-import img2 from "../../assets/trooper/076.jpg";
-import img3 from "../../assets/trooper/078.jpg";
-import img4 from "../../assets/trooper/079.jpg";
-import img5 from "../../assets/trooper/080.jpg";
+// import imgDefault from "as" //"../../../assets/trooper/holder.png";
+// import img1 from "../../assets/trooper/WP_20150107_005.jpg";
+// import img2 from "../../assets/trooper/076.jpg";
+// import img3 from "../../assets/trooper/078.jpg";
+// import img4 from "../../assets/trooper/079.jpg";
+// import img5 from "../../assets/trooper/080.jpg";
 import { StylesService } from "@tc/tc-rc-general";
 
 
@@ -32,11 +32,11 @@ export default function TrooperMatchComponent() {
 
     const [doubleImageIndex, setDoubleImageIndex] = React.useState(startDImageIndex);
     const [picIndex, setPicIndex] = React.useState([
-        img1,
-        img2,
-        img3,
-        img4,
-        img5
+        "assets/trooper/WP_20150107_005.jpg",
+        "assets/trooper/076.jpg",
+        "assets/trooper/078.jpg",
+        "assets/trooper/079.jpg",
+        "assets/trooper/080.jpg"
     ]);
     
     const [arrays, setArrays] = React.useState(startArray);
@@ -66,7 +66,7 @@ export default function TrooperMatchComponent() {
             let column = [];
             for(let r = 0; r < 5; r++) {
               let m = {
-                img: imgDefault,
+                img: "assets/trooper/holder.png",
                 stat: 0
               }
               column.push(m);
@@ -167,8 +167,8 @@ export default function TrooperMatchComponent() {
             } else {
                 setResp(false);
                 setTimeout( () => {
-                    doubleImageIndex[selectedImg.col][selectedImg.row].img = imgDefault;
-                    doubleImageIndex[selectedImg2.col][selectedImg2.row].img = imgDefault;
+                    doubleImageIndex[selectedImg.col][selectedImg.row].img = "assets/trooper/holder.png";
+                    doubleImageIndex[selectedImg2.col][selectedImg2.row].img = "assets/trooper/holder.png";
       
                     arrays[selectedImg.row][selectedImg.col].stat = 0;
                     arrays[selectedImg2.row][selectedImg2.col].stat = 0;

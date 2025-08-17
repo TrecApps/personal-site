@@ -126,7 +126,7 @@ export default function AboutMeComponent() {
                     <p onClick={() => toggleRef(imgRef, divRef)}>
                         <b>
                             <img ref={imgRef} height="20px" width="20px"
-                                className={[styles.expand_icon, styles.expand_i_small, styles.basicImg].join(' ')} src={lessThan} /> ({project.job.gradYear}) {project.job.school}</b>
+                                className={[styles.expand_icon, styles.expand_i_small, styles.basicImg].join(' ')} src="assets/Less_than.png" /> ({project.job.gradYear}) {project.job.school}</b>
                     </p>
                     <ul style={{listStyleType: "disc", marginBottom: "15px"}} ref={divRef} className={styles.basicList}>
                         { project.details.map((value: string) => ( <li>{value}</li> )) }
@@ -284,7 +284,7 @@ export default function AboutMeComponent() {
             
             <div className={ss.getElementItemClasses("")}>
                 <h3 onClick={() => toggleRef(pProjectRefImg, pProjectRefDiv)}>
-                    <img ref={pProjectRefImg} id="exp1" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src={lessThan} /> Personal Projects
+                    <img ref={pProjectRefImg} id="exp1" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src="assets/Less_than.png" /> Personal Projects
                 </h3>
                 <ul ref={pProjectRefDiv} className={styles.basicList}>
                     {personalProjectsTsx}
@@ -296,7 +296,7 @@ export default function AboutMeComponent() {
 
             <div className={ss.getElementItemClasses("")}>
                 <h3 onClick={() => toggleRef(wProjectRefImg, wProjectRefDiv)}>
-                    <img ref={wProjectRefImg} id="exp1" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src={lessThan} /> Work Projects
+                    <img ref={wProjectRefImg} id="exp1" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src="assets/Less_than.png" /> Work Projects
                 </h3>
                 <ul ref={wProjectRefDiv} className={styles.basicList}>
                     { workListTsx}
@@ -306,7 +306,7 @@ export default function AboutMeComponent() {
 
             <div className={ss.getElementItemClasses("")}>
                 <h3 onClick={() => toggleRef(sProjectRefImg, sProjectRefDiv)}>
-                    <img ref={sProjectRefImg} id="exp3" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src={lessThan} /> School Projects
+                    <img ref={sProjectRefImg} id="exp3" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src="assets/Less_than.png" /> School Projects
                 </h3>
                 <ul ref={sProjectRefDiv} className={styles.basicList}>
                     {schoolListTsx}
@@ -316,7 +316,7 @@ export default function AboutMeComponent() {
 
             <div className={ss.getElementItemClasses("")}>
                 <h3 onClick={()=> toggleRef(oProjectRefImg, oProjectRefDiv)}>
-                    <img ref={oProjectRefImg} id="exp1" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src={lessThan} /> Personal Projects (on-hold)
+                    <img ref={oProjectRefImg} id="exp1" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src="assets/Less_than.png" /> Personal Projects (on-hold)
                 </h3>
                 <ul ref={oProjectRefDiv} className={styles.basicList}>
                     {oldProjectsTsx}
@@ -325,7 +325,7 @@ export default function AboutMeComponent() {
 
             <div className={ss.getElementItemClasses("")}>
                 <h3 onClick={()=> toggleRef(wpProjectRefImg, wpProjectRefDiv)}>
-                    <img ref={wpProjectRefImg} id="exp4" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src={lessThan} /> Work
+                    <img ref={wpProjectRefImg} id="exp4" className={[styles.expand_icon, styles.expand_i_reg, styles.basicImg].join(' ')} src="assets/Less_than.png" /> Work
                 </h3>
                 <ul ref={wpProjectRefDiv} className={styles.basicList}>
                     { workProjectListTsx }
