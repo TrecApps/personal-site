@@ -4,8 +4,6 @@ import { Container } from "react-bootstrap";
 
 import styles from "./component.module.css";
 
-
-import lessThan from "../assets/Less_than.png";
 import { StylesService } from "@tc/tc-rc-general";
 
 

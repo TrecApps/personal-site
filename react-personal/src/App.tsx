@@ -169,12 +169,18 @@ function App() {
 
     <Routes>
       <Route path="/" element={<Navigate to="AboutMe" replace />} />
+      <Route path="" element={<Navigate to="AboutMe" replace />} />
+      <Route path="/React" element={<Navigate to="AboutMe" replace />} />
+      <Route path="React" element={<Navigate to="AboutMe" replace />} />
+      <Route path="/React/" element={<Navigate to="AboutMe" replace />} />
+      <Route path="React/" element={<Navigate to="AboutMe" replace />} />
 
         <Route path="AboutMe" element={ <AboutMeComponent /> } />
         <Route path="Games" element={ <GameComponent /> } />
       
         <Route path="Gallery" element={ <ArtGalleryComponent /> } />
         <Route path="History" element={ <SiteHistoryComponent /> } />
+        {/* <Route path="*" element={<Navigate to="AboutMe" replace />} /> */}
     </Routes>
 
 
