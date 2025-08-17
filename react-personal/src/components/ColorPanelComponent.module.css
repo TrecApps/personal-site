@@ -1,0 +1,13 @@
+.colorPanel {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    padding: 5px;
+}
+
+.colorButton {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+}

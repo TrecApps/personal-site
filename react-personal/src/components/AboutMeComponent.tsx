@@ -261,11 +261,16 @@ export default function AboutMeComponent() {
             <div className={ss.getElementItemClasses("")}>
                 <h3>Education</h3>
                 <table>
-                    <tr>
-                        <th>School, Degree, GPA</th>
-                        <th>Years</th>
-                    </tr>
-                    {educationTsx}
+                    <thead>
+                        <tr>
+                            <th>School, Degree, GPA</th>
+                            <th>Years</th>
+                        </tr>                        
+                    </thead>
+                    <tbody>
+                        {educationTsx}
+                    </tbody>
+                   
                 </table>
             </div>
 

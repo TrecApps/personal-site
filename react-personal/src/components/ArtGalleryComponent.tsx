@@ -35,10 +35,10 @@ export default function ArtGalleryComponent() {
     const [searchTerm, setSearchTerm] = React.useState('');
 
     const [useGallery, setUseGallery] = React.useState(false);
-    const [showPanel, setShowPanel] = React.useState(false);
+    const [showPanel, ] = React.useState(false);
     //const [xButtonHover, setXButtonHover] = React.useState(false);
 
-    const [imageWidth, setImageWidth] = React.useState(500);
+    const [, setImageWidth] = React.useState(500);
     const [viewHeight, setViewHeight] = React.useState(600);
     const [galleryImageHeight, setGalleryImageHeight] = React.useState('600px');
     const [cardHeight, setCardHeight] = React.useState('600px');
@@ -301,7 +301,7 @@ export default function ArtGalleryComponent() {
             maxWidth:"inherit",
             backgroundColor: "rgb(63, 227, 248)",
             zIndex: 10 ,
-            maxHeight: "100vh",
+            maxHeight: "0",
             display: "flex",
             flexDirection: "column"}}>
     {

@@ -75,3 +75,11 @@ ul {
 .navShadow {
     box-shadow: 0 8px 5px 0px black;
   }
+
+.body-dark {
+    background-color: rgb(68, 68, 68);
+}
+
+.dark-mode-link {
+    color: aliceblue;
+}

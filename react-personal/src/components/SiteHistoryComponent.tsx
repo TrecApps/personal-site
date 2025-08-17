@@ -1,5 +1,4 @@
 import { Container } from "react-bootstrap";
-import styles from "./component.module.css";
 import { StylesService } from "@tc/tc-rc-general";
 
 export default function SiteHistoryComponent(){
