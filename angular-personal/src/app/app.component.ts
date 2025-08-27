@@ -1,6 +1,6 @@
 import { CommonModule, NgClass } from '@angular/common';
 import { AfterViewChecked, AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { ActivatedRoute , Router, RouterLink, RouterOutlet, UrlSegment } from '@angular/router';
 import { PopupComponent, StylesService } from '@tc/tc-ngx-general';
 import { ColorOption, ColorPanelComponent } from './components/color-panel/color-panel.component';
 
@@ -15,11 +15,19 @@ export class AppComponent implements OnInit, AfterViewChecked {
   title = 'angular-personal';
 
   ss: StylesService;
+  router: Router ;
 
   showStylePopup: boolean = false;
 
-  constructor(ss: StylesService) {
+  constructor(ss: StylesService, router: Router ) {
     this.ss = ss;
+    this.router = router;
+
+    // this.route.url.subscribe({
+    //   next: (segment: UrlSegment[]) => {
+    //     console.log("Url Segment: ", segment);
+    //   }
+    // })
   }
   ngAfterViewChecked(): void {
     if(this.colorStyleCheck)
