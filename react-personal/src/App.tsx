@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer, type JSX } from 'react'
-import { Link, Navigate, Route, Routes } from 'react-router-dom'
+import { Link, Navigate, Route, Routes, useLocation  } from 'react-router-dom'
 import { Nav, Navbar } from 'react-bootstrap'
 import './App.css'
 import { StylesService, Popup } from '@tc/tc-rc-general';
@@ -48,6 +48,9 @@ function App() {
   const [showStylePopup, setShowStylePopup] = React.useState<boolean>(false);
   const [colorChanged, setColorChanged] = React.useState<boolean>(false);
   const dispatch = useDispatch<AppDispatch>();
+
+const location = useLocation(); // Access the location object
+
   useEffect(() => {
  
     document.body.classList.add(stylesService.isDark ? 'body-dark' : 'body-light');
@@ -157,6 +160,15 @@ function App() {
                 <li className="nav-item" style={{paddingLeft:"5px"}}><a className="nav-link">|</a></li>
               
                 <li className="nav-item" style={{paddingLeft:"5px"}}><a className="nav-link" onClick={() => setShowStylePopup(true)}>Set Style</a></li>
+
+                <li className="nav-item" style={{paddingLeft:"5px"}}><a className="nav-link">|</a></li>
+
+                <li className='nav-item' style={{paddingLeft:"5px"}}>
+                  <a 
+                    className='nav-link' 
+                    href={"https://jljacko.trecapps.com/" + location.pathname.replace("/React", "").replace("/react", "")}
+                    target='_blank'
+                  >View Angular Version</a></li>
             </Nav>
           </Navbar.Collapse>
 

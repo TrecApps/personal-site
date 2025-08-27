@@ -120,11 +120,28 @@ export default function SiteHistoryComponent(){
 
 
     <div className={ss.getElementItemClasses('')}>
-        <h4>13.January.2025 - (do be added when complete)</h4>
+        <h4>13.January.2025</h4>
         <ul>
             <li>Recreated site with React/Vite (you are looking at the React version)</li>
         </ul>
     </div>
+
+    <div className={ss.getElementItemClasses('')}>
+        <h4>17.August.2025</h4>
+        <ul>
+            <li>Added TrecApps styling changes to React Version (this is the React Version)</li>
+            <li>Added React Version to the static site</li>
+        </ul>
+    </div>
+
+    <div>
+        <h4>27.August.2025</h4>
+        <ul>
+            <li>Fixed centering issues on Game and Art Gallery</li>
+            <li>Added adaptable link to the Angular version of this site</li>
+        </ul>
+    </div>
+
 
     
     </Container>
