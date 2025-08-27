@@ -193,7 +193,7 @@ ul {
     top: 0;
     left: 0; 
     background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 5%;
+    border-radius: 3%;
     transition: 0.5s;
     overflow: hidden;
 }

@@ -123,10 +123,29 @@ export default function ArtGalleryComponent() {
         ref.current.className = classes.join(' ');
     }
 
+
+    const [hidePanelRef, setHidePanelRef] = React.useState<number>(-1);
+
     function togglePanelView(isViewing: boolean) {
         if(!panelRef.current) return;
 
         panelRef.current.style.maxHeight = isViewing ? '100%' : '0';
+        if(isViewing){
+            if(hidePanelRef != -1){
+                clearInterval(hidePanelRef);
+            }
+            panelRef.current.hidden = false;
+        } else {
+            const panel = panelRef.current;
+            setHidePanelRef(setTimeout(()=> {
+                
+                    panel.hidden = true;
+                 
+                
+            }, 450));
+        }
+
+
 
     }
 
@@ -291,24 +310,24 @@ export default function ArtGalleryComponent() {
     <div style={{height:"300px"}}></div>
 
 
-    <div ref={panelRef} className={styles.imgPanel}
+    <div ref={panelRef} className={ss.getElementContainerClasses(styles.imgPanel)}
         style={{
-            border: "3px solid lightgreen",
             position: "fixed",
             bottom: "0px",
             width: "100%",
-            marginLeft: "-15px",
+            marginLeft: "-6px",
             maxWidth:"inherit",
-            backgroundColor: "rgb(63, 227, 248)",
             zIndex: 10 ,
             maxHeight: "0",
             display: "flex",
-            flexDirection: "column"}}>
+            flexDirection: "column"}}
+        hidden
+    >
     {
         selectedImage.url.length ?
     
 (
-    <div className={styles.imageViewer} style={{maxHeight : viewHeight * 0.75 + 'px'}}>
+    <div className={ss.getElementItemClasses(styles.imageViewer)} style={{maxHeight : viewHeight * 0.75 + 'px'}} >
         <div className={styles.switchHolder}>
 
             {
@@ -335,7 +354,7 @@ export default function ArtGalleryComponent() {
     
     }
     
-    <div style={{flexGrow: 1}}>
+    <div style={{flexGrow: 1}} className={ss.getElementItemClasses("")}>
 
         <div style={{
             display: "flex", flexDirection: "column", margin: "10px", justifyContent: "center", alignItems: "center", gap:"5px"}}>

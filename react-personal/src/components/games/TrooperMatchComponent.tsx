@@ -184,7 +184,7 @@ export default function TrooperMatchComponent() {
 
 
     return (
-        <Container className={ss.getElementItemClasses(styles.baseBackground)} style={{overflowY: "auto"}}>
+        <div className={ss.getElementItemClasses(styles.baseBackground)} style={{overflowY: "auto"}}>
             <div className={styles.matchCenter}>
                 <Button id="gridSubmit" variant="primary" onClick={generateGame} style={{padding: "20px"}}>Generate Game</Button>
             </div>
@@ -255,6 +255,6 @@ export default function TrooperMatchComponent() {
 
 
     
-        </Container>
+        </div>
     );
 }
