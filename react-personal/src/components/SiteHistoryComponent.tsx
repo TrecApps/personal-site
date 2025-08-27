@@ -139,6 +139,7 @@ export default function SiteHistoryComponent(){
         <ul>
             <li>Fixed centering issues on Game and Art Gallery</li>
             <li>Added adaptable link to the Angular version of this site</li>
+            <li>Fixed Certification section in About Me</li>
         </ul>
     </div>
 

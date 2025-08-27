@@ -82,6 +82,12 @@
     min-width: 200px;
 }
 
+@media (min-width: 768px) {
+    .resumeList {
+        flex-basis: 45%;
+    }
+}
+
 img.expand_icon {
     border-radius: 50%;
     transform:rotate(180deg);
