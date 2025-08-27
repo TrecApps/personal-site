@@ -68,10 +68,18 @@
     <button *ngIf="!showPanel" class="btn btn-primary act-search" (click)="setImageEntry(undefined)">Show Search</button>
     
     <div [@onShowGallery]="showPanel ? 'doShow' : 'doHide'" 
-        style="border: 3px solid lightgreen; position: fixed; bottom: 0px; width: 100%; margin-left:-15px;max-width:inherit; background-color: rgb(63, 227, 248); z-index: 10; max-height: 100vh;
-  display: flex;
-  flex-direction: column;">
-        <div *ngIf="selectedImage" class="image-viewer" [style]="'max-height : ' + viewHeight * 0.8 + 'px'">
+        #imagePanel
+        appElementContainer
+        hidden
+        style="position: fixed; bottom: 0px; width: 100%; margin-left:-6px;max-width:inherit; z-index: 10; max-height: 100vh;
+            display: flex; flex-direction: column;"
+    >
+        <div 
+            *ngIf="selectedImage" 
+            appElementItem 
+            class="image-viewer" 
+            [style]="'max-height : ' + viewHeight * 0.8 + 'px'"
+        >
             <div class="switch-holder">
                 <img src="assets/Less_than.png" style="left:0" class="browse-img" *ngIf="currentIndex" (click)="switchImage(false)">
                 <img src="assets/Less_than.png" class="browse-img img-rev" *ngIf="!indexIsFinal && currentIndex" (click)="switchImage(true)">
@@ -83,7 +91,10 @@
             <img [src]="selectedImage.url">
             
         </div>
-        <div style="flex-grow: 1;">
+        <div 
+            style="flex-grow: 1;"
+            appElementItem
+        >
             <div style="display: flex; flex-direction: column ;margin:10px; justify-content: center; align-items: center; gap:5px;">
                 <div style="display: flex; flex-direction: row ;margin:5px; justify-content: center; align-items: center; gap:10px;width:100%">
                     <input type="text" class="form-control" placeholder="Search By Tag" [(ngModel)]="searchTerm">

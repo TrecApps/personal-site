@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { FormsModule } from '@angular/forms';
-import { AfterContentInit, Component, HostListener } from '@angular/core';
+import { AfterContentInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { ImageFilterPipe } from '../../pipes/image-filter.pipe';
 import { HttpClient } from '@angular/common/http';
 import { ImageEntry } from '../../models/image-entry';
@@ -77,6 +77,9 @@ export class ArtGalleryComponent implements AfterContentInit{
     this.adjustImages(event.target.innerWidth, event.target.innerHeight);
   }
 
+  @ViewChild("imagePanel")
+  imagePanel!: ElementRef<HTMLDivElement>;
+
   adjustImages(width: any, height: any){
 
     this.viewHeight = height;
@@ -115,6 +118,8 @@ export class ArtGalleryComponent implements AfterContentInit{
     this.adjustImages(window.innerWidth, window.innerHeight);
   }
 
+  panelHideTimeout: any = -1;
+
   prepImages(){
     this.client.get<ImageEntry[]>('assets/Images.json').subscribe((entries: ImageEntry[]) => {
       this.images = entries;
@@ -127,17 +132,22 @@ export class ArtGalleryComponent implements AfterContentInit{
     this.currentIndex = index;
 
     let filteredImages = this.imageFilter.transform(this.images, this.showSelfArt, this.showCommissions, this.searchTerm)
-    // if(this.currentIndex == filteredImages.length - 1)
-    //   {
-    //     this.indexIsFinal = true;
-    //     return;
-    //   }
 
     this.indexIsFinal = this.currentIndex == filteredImages.length - 1;
+
+    if(this.panelHideTimeout != -1){
+      clearInterval(this.panelHideTimeout);
+    }
+
+    this.imagePanel.nativeElement.hidden = false;
   }
 
   hideGallery(){
+    if(!this.showPanel) return;
     this.showPanel = false;
+    this.panelHideTimeout = setTimeout(() => {
+      this.imagePanel.nativeElement.hidden = true;
+    }, 333);
   }
 
   toggleTagView(entry: ImageEntry, show: boolean){
