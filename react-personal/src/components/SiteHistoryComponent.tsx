@@ -134,7 +134,7 @@ export default function SiteHistoryComponent(){
         </ul>
     </div>
 
-    <div>
+    <div className={ss.getElementItemClasses('')}>
         <h4>27.August.2025</h4>
         <ul>
             <li>Fixed centering issues on Game and Art Gallery</li>
