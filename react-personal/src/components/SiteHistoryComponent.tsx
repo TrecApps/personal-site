@@ -143,6 +143,14 @@ export default function SiteHistoryComponent(){
         </ul>
     </div>
 
+    <div className={ss.getElementItemClasses('')}>
+        <h4>29.August.2025</h4>
+        <ul>
+            <li>Art Gallery new uses a new set of images</li>
+            <li>Fixed Image Link issues when deployed on Azure</li>
+        </ul>
+    </div>
+
 
     
     </Container>

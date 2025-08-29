@@ -5,8 +5,6 @@ import React from "react";
 
 import images from '../assets/Images.json';
 
-import lessThan from "../assets/Less_than.png";
-import xImage from "../assets/icons/X-image.png";
 import { StylesService } from "@tc/tc-rc-general";
 
 type ImageEntry = {
@@ -333,7 +331,7 @@ export default function ArtGalleryComponent() {
             {
                 currentIndex ? 
                     (
-                        <img src={lessThan} style={{position: "absolute", left:0}} className={styles.browseImg} onClick={() => switchImage(false)} />
+                        <img src="assets/Less_than.png" style={{position: "absolute", left:0}} className={styles.browseImg} onClick={() => switchImage(false)} />
                     ) : (<div></div>)
             }
 
@@ -341,7 +339,7 @@ export default function ArtGalleryComponent() {
             {
                 !indexIsFinal ? 
                     (
-                        <img src={lessThan} style={{position: "absolute", right:0}} className={[styles.browseImg,  styles.imgRev].join(' ')} onClick={() => switchImage(true)} />
+                        <img src="assets/Less_than.png" style={{position: "absolute", right:0}} className={[styles.browseImg,  styles.imgRev].join(' ')} onClick={() => switchImage(true)} />
                     ) : (<div></div>)
             }
             
@@ -362,7 +360,7 @@ export default function ArtGalleryComponent() {
                 <Form.Control type="text" placeholder="Search By Tag" value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} />
                 <div className={styles.redButtonContainer}>
                         
-                    <button onClick={() => togglePanelView(false)}><img src={xImage} alt="exit button" /></button>
+                    <button onClick={() => togglePanelView(false)}><img src="assets/icons/X-image.png" alt="exit button" /></button>
                 </div>
             </div>
         </div>
