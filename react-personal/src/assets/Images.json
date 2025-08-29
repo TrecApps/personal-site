@@ -1,584 +1,207 @@
 [
+
+
+
     {
-        "url": "assets/Projects/Coffeeshop-Home.png",
+        "url": "assets/Art2/Chapter 2 Image.png",
         "artist": "Tormontrec",
-        "title": "Coffeeshop Home Page",
-        "desc": "Home page of Coffeeshop, featuring content routed through Azure Service Bus, a post editor, and a messaging pane",
-        "isSelf": true,
-        "tags": [
-            "Coffeeshop",
-            "Home Page",
-            "Messaging Pane"
-        ]
-    },{
-        "url": "assets/Projects/Coffeeshop-Profile.png",
-        "artist": "Tormontrec",
-        "title": "Coffeeshop Profile Page",
-        "desc": "Profile Page of Coffeeshop where the user can set a profile and cover photo, set the about me, or request connections",
-        "isSelf": true,
-        "tags": [
-            "Coffeeshop",
-            "Profile Page",
-            "Cover Photo",
-            "About Me"
-        ]
-    },{
-        "url": "assets/Projects/Coffeeshop-Image-Crop.png",
-        "artist": "Tormontrec",
-        "title": "Coffeeshop Image Pane",
-        "desc": "Image Pane showcasing the current Profile Picture, and the cropping capabilities offered",
-        "isSelf": true,
-        "tags": [
-            "Coffeeshop",
-            "Image Pane",
-            "Cropping"
-        ]
-    },{
-        "url": "assets/Projects/Coffeeshop-Picture.png",
-        "artist": "Tormontrec",
-        "title": "Coffeeshop Picture Post",
-        "desc": "Old Post on Coffeeshop featuring an embedded image",
+        "title": "Sylene's Shock",
+        "desc": "Sylene encounters a terrible sight, Hailroth standing behind her",
         "isSelf": true,
         "tags": [
             "Sylene Lokisdottir",
-            "Thena Thorsdottir",
-            "Coffeeshop",
-            "Post with image"
+            "Hailroth Razeson",
+            "Ancient One"
         ]
-    },{
-        "url": "assets/Art/Part_3_Ch_1.png",
-        "artist": "BoomDaFunk and UzuriArt",
-        "title": "Sylene's Enchanted Dream",
-        "desc": "Sylene dreams about dancing with her father Loki in front of Lady Sif, aided by Amora the Enchantress and Dr. Doom",
-        "isSelf": false,
+    },
+    {
+        "url": "assets/Art2/Chapter 3 pic a.png",
+        "artist": "Tormontrec",
+        "title": "Gamora before Thanos",
+        "desc": "Gamore stands before Thanos on the Sanctuary II",
+        "isSelf": true,
         "tags": [
-            "Sylene Lokisdottir",
+            "Gamora",
+            "Thanos"
+        ]
+    },
+    {
+        "url": "assets/Art2/Chapter 3 pic b.png",
+        "artist": "Tormontrec",
+        "title": "Loki meets Thanos",
+        "desc": "Loki, shortly after the events of Thor (2011) during his first encounter with Thanos",
+        "isSelf": true,
+        "tags": [
             "Loki",
-            "Lady Sif",
-            "Amora the Enchantress",
-            "Dr. Doom"
+            "Thanos"
         ]
     },
     {
-        "url": "assets/Art/Part_3_Ch_2.png",
+        "url": "assets/Art2/Chapter 4 a.png",
         "artist": "Tormontrec",
-        "title": "Sylene sees Thor",
-        "desc": "An undercover Sylene encounters Thor at the tomb of Loki",
+        "title": "Sylene and the Ancient One",
+        "desc": "Sylene parts from her life long mentor, the Ancient One of Kamar Taj",
         "isSelf": true,
         "tags": [
             "Sylene Lokisdottir",
-            "Loki",
-            "Thor",
-            "New Asgard"
+            "Ancient One"
         ]
     },
     {
-        "url": "assets/Art/Part_3_Ch_3.png",
+        "url": "assets/Art2/Chapter 6 a.png",
         "artist": "Tormontrec",
-        "title": "The Marriage",
-        "desc": "Sylene dreams of Loki walking her down the aisle",
-        "isSelf": true,
-        "tags": [
-            "Sylene Lokisdottir",
-            "Loki",
-            "Hailroth",
-            "Gorroth",
-            "Wedding"
-        ]
-    },
-    {
-        "url": "assets/Art/Part_3_Ch_4.png",
-        "artist": "Tormontrec",
-        "title": "Sylene encounters Tony Stark",
-        "desc": "An undercover Sylene encounters Tony Stark meeting with Dr. Doom",
-        "isSelf": true,
-        "tags": [
-            "Sylene Lokisdottir",
-            "Dr. Doom",
-            "Tony Stark"
-        ]
-    },
-    {
-        "url": "assets/Art/Part_3_Ch_5.png",
-        "artist": "Tormontrec",
-        "title": "Amora Becomes Queen",
-        "desc": "Amora the Enchantress becomes the Queen of Vanaheim, stands before portraits of Sylene Lokisdottir and Thena Thorsdottir",
+        "title": "Sylene encounters Amora",
+        "desc": "Amora the Enchantress shows herself to Sylene Lokisdottir in the latter's old room",
         "isSelf": true,
         "tags": [
             "Amora the Enchantress",
-            "Thena Thorsdottir",
             "Sylene Lokisdottir"
         ]
     },
     {
-        "url": "assets/Art/Part_3_Ch_6.png",
+        "url": "assets/Art2/Chapter 6 b.png",
         "artist": "Tormontrec",
-        "title": "Sylene Angry",
-        "desc": "An undercover Sylene tries to stop Wong from freeing the Einherjar",
+        "title": "Amora's Time Powers",
+        "desc": "Amora reveals to Sylene Lokisdottir her ability to play events in a place from times past",
         "isSelf": true,
         "tags": [
             "Sylene Lokisdottir",
-            "Latverian Prison"
+            "Amora the Enchantress"
         ]
     },
     {
-        "url": "assets/Art/Part_3_Ch_7.png",
+        "url": "assets/Art2/Chapter 10 a.png",
         "artist": "Tormontrec",
-        "title": "Sylene on Nidavellir",
-        "desc": "A restored Sylene ruminates before the Neutron Star of Nidavellir",
+        "title": "Sylene's Coronation",
+        "desc": "Sylene (daughter of Loki and Lady Sif) is formally coronated as the new Queen of Jotunheim",
         "isSelf": true,
         "tags": [
             "Sylene Lokisdottir",
-            "Nidavellir"
-        ]
-    },
-    {
-        "url": "assets/Art/Part_3_Ch_8.png",
-        "artist": "Tormontrec",
-        "title": "Sylene sees herself and Hailroth",
-        "desc": "Sylene conjures an illusion of her past self and the late-Hailroth",
-        "isSelf": true,
-        "tags": [
-            "Sylene Lokisdottir",
-            "Hailroth"
-        ]
-    },
-    {
-        "url": "assets/Art/Part_3_Ch_9.png",
-        "artist": "Tormontrec",
-        "title": "Ulik the Rock Troll",
-        "desc": "Ulik the Rock Troll on Alfheim",
-        "isSelf": true,
-        "tags": [
-            "Ulik the Rock Troll",
-            "Alfheim"
-        ]
-    },
-    {
-        "url": "assets/Art/Part_3_Ch_11.png",
-        "artist": "Tormontrec",
-        "title": "Sylene meets Eir Sylvan",
-        "desc": "Sylene meets with her grandmother, Eir Sylvan, with portraits of Frigga and Sif in the background",
-        "isSelf": true,
-        "tags": [
-            "Sylene Lokisdottir",
-            "Eir",
-            "Lady Sif (portrait)",
-            "Frigga (portrait)"
-        ]
-    },
-    {
-        "url": "assets/Art/Part_3_Ch_12.png",
-        "artist": "Tormontrec",
-        "title": "Sylene vs Thor",
-        "desc": "Sylene faces off against Thor on Vanaheim as Lady Sif, Valkyire and a couple Frost Giants watch",
-        "isSelf": true,
-        "tags": [
-            "Sylene Lokisdottir",
-            "Thor Odinson",
-            "Lady Sif",
-            "Valkyrie",
-            "Vanaheim"
-        ]
-    },
-    {
-        "url": "assets/Art/Part_3_Ch_13.png",
-        "artist": "Tormontrec",
-        "title": "Thena meets Sylene again",
-        "desc": "Sylene, clad in an Asgardian green and gold reveals herself to Thena in a cave",
-        "isSelf": true,
-        "tags": [
-            "Sylene Lokisdottir",
-            "Thena Thorsdottir"
-        ]
-    },
-    {
-        "url": "assets/Art/Part_3_Ch_14.png",
-        "artist": "Tormontrec",
-        "title": "The Elder Goddess Gaia",
-        "desc": "Thor encounters the Elder Goddess Gaia in some woods near New Asgard",
-        "isSelf": true,
-        "tags": [
-            "Gaia"
-        ]
-    },
-    {
-        "url": "assets/Art/Part_3_Ch_15.png",
-        "artist": "Tormontrec",
-        "title": "Thane confronts Thena",
-        "desc": "Thane, the presumed son of Thanos, confronts Thena Thorsdottir after killing Ulik the Rock Troll as Grandmaster En Dwi Gast looks on in the background",
-        "isSelf": true,
-        "tags": [
-            "Thane",
-            "Thena Thorsdottir",
-            "Ulik the Rock Troll",
-            "En Dwi Gast (Grandmaster)"
-        ]
-    },
-    {
-        "url": "assets/Art/Part_3_Ch_16.png",
-        "artist": "Tormontrec",
-        "title": "Thane reveals Thanos to Thena",
-        "desc": "Thane reveals to Thena Thorsdottir that Thanos faked his death at Thor's hand in Avengers Endgame",
-        "isSelf": true,
-        "tags": [
-            "Thane",
-            "Thena Thorsdottir",
-            "Thanos",
-            "Avengers Endgame"
-        ]
-    },
-    {
-        "url": "assets/Art/Part_3_Ch_17.png",
-        "artist": "Tormontrec",
-        "title": "Comparison between Hailroth, Thane, and Sylene",
-        "desc": "Comparison between Hailroth, Thane, and Sylene",
-        "isSelf": true,
-        "tags": [
-            "Sylene Lokisdottir",
-            "Thane Hailrothson",
             "Hailroth Razeson"
         ]
     },
     {
-        "url": "assets/Art/Part_3_Ch_18.png",
+        "url": "assets/Art2/Chapter 10 b.png",
         "artist": "Tormontrec",
-        "title": "Thor and Sif meet Queen Aelsa on Alfheim",
-        "desc": "Thor Odinson blocks a fireblast from Alfheim's Queen Aelsa in front of a shocked Lady Sif",
+        "title": "Hela stopped by Odin",
+        "desc": "Odin Borson stops his daughter Hela from killing Farbauti",
         "isSelf": true,
         "tags": [
-            "Thor Odinson",
-            "Lady Sif",
-            "Queen Aelsa Featherwine of the Fay",
-            "Alfheim"
+            "Odin Borson",
+            "Hela Odinsottir",
+            "Farbauti"
         ]
     },
     {
-        "url": "assets/Art/Part_3_Ch_19.png",
-        "artist": "BoomDaFunk",
-        "title": "Sylene braiding Thena's hair",
-        "desc": "Sylene Lokisdottir braiding Thena Thorsdottir's hair prior to the latter's undercover mission",
-        "isSelf": false,
-        "tags": [
-            "Sylene Lokisdottir",
-            "Thena Thorsdottir"
-        ]
-    },
-    {
-        "url": "assets/Art/Part_3_Ch_20.png",
+        "url": "assets/Art2/Chapter 11 b.png",
         "artist": "Tormontrec",
-        "title": "Mephisto Chthon on the throne of Hell",
-        "desc": "Mephisto Chthon on the throne of Hell",
-        "isSelf": true,
-        "tags": [
-            "Mephisto",
-            "Chthon",
-            "Hell"
-        ]
-    },
-
-
-    {
-        "url": "assets/Art/Part 3 Ch 21.png",
-        "artist": "Tormontrec",
-        "title": "Thane and Sylene",
-        "desc": "Thane speaks with his mother Sylene on a balcony of Utgard's palace",
-        "isSelf": true,
-        "tags": [
-            "Thane Hailrothson",
-            "Sylene Lokisdottir",
-            "Utgard Jotunheim"
-        ]
-    },
-    {
-        "url": "assets/Art/Part 3 Ch 22.png",
-        "artist": "Tormontrec",
-        "title": "Thena and Sylene in Battle",
-        "desc": "Thena (Daughter of Thor and Amora) and Sylene (Dauther of Loki and Lady Sif) braced for battle",
-        "isSelf": true,
-        "tags": [
-            "Thane Hailrothson",
-            "Thena Thorsdottir",
-            "Sylene Lokisdottir",
-            "Gorroth Razeson"
-        ]
-    },
-    {
-        "url": "assets/Art/Part 3 Ch 23.png",
-        "artist": "Tormontrec",
-        "title": "Abduction on Amorgoth",
-        "desc": "Thena (Daughter of Thor and Amora) is intercepted by Hercules per Zeus' orders while trying to knock out a Chitauri Tower on Amorgoth",
-        "isSelf": true,
-        "tags": [
-            "Chitauri Tower",
-            "Thena Thorsdottir",
-            "Hercules",
-            "Amorgoth"
-        ]
-    },
-    {
-        "url": "assets/Art/Part 3 Ch 24.png",
-        "artist": "Tormontrec",
-        "title": "Thena vs. Hercules",
-        "desc": "Thena (Dauther of Thor and Amora) strikes Hercules on the high plains of Amorgoth",
-        "isSelf": true,
-        "tags": [
-            "Thena Thorsdottir",
-            "Hercules",
-            "Amorgoth"
-        ]
-    },
-    {
-        "url": "assets/Art/Part 3 Ch 26.png",
-        "artist": "Tormontrec",
-        "title": "Olympus at night",
-        "desc": "Overview of Olympus at night",
-        "isSelf": true,
-        "tags": [
-            "Olympus"
-        ]
-    },
-    {
-        "url": "assets/Art/Part 3 Ch 28.png",
-        "artist": "Tormontrec",
-        "title": "Sylene and Dr. Doom",
-        "desc": "Dr. Victor Von Doom and his adoptive mother Sylene (daughter of Loki and Lady Sif) on a balcony overlooking Latveria's mountains",
+        "title": "Sylene and Hailroth",
+        "desc": "Sylene (daughter of Loki and Lady Sif) visits Hailroth Razeson's old hideout",
         "isSelf": true,
         "tags": [
             "Sylene Lokisdottir",
-            "Dr. Doom",
-            "Latveria"
+            "Hailroth Razeson"
         ]
     },
     {
-        "url": "assets/Art/Part 3 Ch 29.png",
+        "url": "assets/Art2/Chapter 12 a.png",
         "artist": "Tormontrec",
-        "title": "Thor and Lady Sif",
-        "desc": "Thor and Lady Sif reminence over the losses they endured since the events of Thor: The Dark World",
+        "title": "Sylene vs Frigga",
+        "desc": "Sylene (daughter of Loki and Lady Sif) has a confrontation with Frigga of Asgard shortly after the events of The Avengers (2012)",
         "isSelf": true,
-        "tags": [
-            "Thor Odinson",
-            "Lady Sif"
-        ]
-    },
-    {
-        "url": "assets/Art/Part 3 Ch 30.png",
-        "artist": "Tormontrec",
-        "title": "Thena and Thane on Hala 2",
-        "desc": "Thena (daughter of Thor and Amora) catches up to Thane after the latter wins a brutal battle against the Kree Empire",
-        "isSelf": true,
-        "tags": [
-            "Thane Hailrothson",
-            "Thena Thorsdottir",
-            "Hala 2"
-        ]
-    },
-    {
-        "url": "assets/Art/Part 3 Ch 31.png",
-        "artist": "BoomDaFunk",
-        "title": "Thane on an icy Throne",
-        "desc": "Thane on an icy Throne after speaking with the Kree Emperor",
-        "isSelf": false,
-        "tags": [
-            "Thane Hailrothson",
-            "Hala 2"
-        ]
-    },
-    {
-        "url": "assets/Art/Part 3 Ch 32.png",
-        "artist": "Tormontrec",
-        "title": "Thor faces Hercules",
-        "desc": "Thor faces off against Hercules on the plains of New Asgard",
-        "isSelf": true,
-        "tags": [
-            "Thor Odinson",
-            "Hercules",
-            "New Asgard"
-        ]
-    },
-    {
-        "url": "assets/Art/Part 3 Ch 33.png",
-        "artist": "Tormontrec",
-        "title": "Sylene and Ares' Covanent",
-        "desc": "Ares, Olympian war god and sone of Zeus, makes a Covanent with Jotunheim's Queen Sylene (daughter of Loki and Lady Sif) in Ompotence City",
-        "isSelf": true,
-        "tags": [
-            "Ares",
-            "Sylene Lokisdottir",
-            "Omnipotence City"
-        ]
-    },
-    {
-        "url": "assets/Art/Part 3 Ch 34.png",
-        "artist": "Tormontrec",
-        "title": "Thor vs. Hercules",
-        "desc": "Thor takes a punch from Hercules as Valkyrie, Lady Sif, and Posiedon watch",
-        "isSelf": true,
-        "tags": [
-            "Thor Odinson",
-            "Hercules",
-            "Lady Sif",
-            "New Asgard",
-            "Posiedon"
-        ]
-    },
-    {
-        "url": "assets/Art/Part 3 Ch 35.png",
-        "artist": "Tormontrec",
-        "title": "Dr. Doom over New Asgard",
-        "desc": "Dr. Victor Von Doom projects himself over New Asgard",
-        "isSelf": true,
-        "tags": [
-            "Dr. Doom",
-            "New Asgard"
-        ]
-    },
-    {
-        "url": "assets/Art/Part 3 Ch 36.png",
-        "artist": "Tormontrec",
-        "title": "Carys/Love and Gaia meet up with Thor and Sif",
-        "desc": "Carys/Love (daughter of Gorr the God-Butcher) and the elder goddess Gaia meet with Thor Odinsin and Lady Sif",
-        "isSelf": true,
-        "tags": [
-            "Thor Odinson",
-            "Lady Sif",
-            "Gaia",
-            "Carys/Love (Gorr's daughter)",
-            "New Asgard"
-        ]
-    },
-    {
-        "url": "assets/Art/Part 3 Ch 37.png",
-        "artist": "Tormontrec",
-        "title": "Sylene and her armies",
-        "desc": "Queen Sylene (daughter of Loki and Lady Sif) speaks to her armies on the palace of Utgard Jotunheim while Thena (daughter of Thor and Amora), Thane Hailrothson, and Gorroth Razeson watch",
-        "isSelf": true,
-        "tags": [
-            "Thane Hailrothson",
-            "Thena Thorsdottir",
-            "Sylene Lokisdottir",
-            "Gorroth Razeson",
-            "Utgard Jotunheim"
-        ]
-    },{
-        "url": "assets/Art/Part 3 Ch 38.png",
-        "artist": "Tormontrec",
-        "title": "Zeus",
-        "desc": "Zeus watches from atop of Mount Olympus as Sylene's Frost Giants prepare to attack",
-        "isSelf": true,
-        "tags": [
-            "Zeus",
-            "Olympus"
-        ]
-    },{
-        "url": "assets/Art/Part 3 Ch 39.png",
-        "artist": "Tormontrec",
-        "title": "Thane Subdued",
-        "desc": "Prince Thane Hailrothson subdued by Hercules, Tulkas the Strong, and Cyttorak on Mount Olympus",
-        "isSelf": true,
-        "tags": [
-            "Thane Hailrothson",
-            "Olympus",
-            "Hercules",
-            "Valkyrie",
-            "Tulkas the Strong"
-        ]
-    },{
-        "url": "assets/Art/Part 3 Ch 40.png",
-        "artist": "Tormontrec",
-        "title": "Thor pounded by the Mangog",
-        "desc": "Queen Sylene (daughter of Loki and Lady Sif) eggs on the Mangog against Thor Odinson in front of Frost Giants while Thena (daughter of Thor and Amora) begs her to stop",
-        "isSelf": true,
-        "tags": [
-            "Thena Thorsdottir",
-            "Sylene Lokisdottir",
-            "Alfheim",
-            "Thor Odinson",
-            "Mangog"
-        ]
-    },{
-        "url": "assets/Art/Part 3 Ch 41.jpg",
-        "artist": "UzuriArt",
-        "title": "Sylene and Thane",
-        "desc": "Sylene and Thane",
-        "isSelf": false,
         "tags": [
             "Sylene Lokisdottir",
-            "Thane Hailrothson"
+            "Frigga"
         ]
-    },{
-        "url": "assets/Art/Part 3 Ch 42.png",
+    },
+    {
+        "url": "assets/Art2/Chapter 14 a.png",
         "artist": "Tormontrec",
-        "title": "Thor and Thena",
-        "desc": "Thor Odinson next to his daughter Thena",
+        "title": "Amora and Sylene",
+        "desc": "Amora and Sylene in the latters room",
         "isSelf": true,
         "tags": [
-            "Thena Thorsdottir",
-            "Thor Odinson"
+            "Sylene Lokisdottir",
+            "Amora the Enchantress"
         ]
-    },{
-        "url": "assets/Art/Part 3 Ch 43.png",
+    },
+    {
+        "url": "assets/Art2/Chapter 15 c.png",
         "artist": "Tormontrec",
-        "title": "Thanos and Mephisto",
-        "desc": "Thanos, the Mad Titan, appears next to the demon Mephisto Chthon",
+        "title": "Sylene before Thanos' fleet",
+        "desc": "Sylene (daughter of Loki and Lady Sif) on her balcony seeing Thanos' fleet for the first time",
         "isSelf": true,
         "tags": [
+            "Sylene Lokisdottir",
             "Thanos",
-            "Mephisto"
-        ]
-    },{
-        "url": "assets/Art/Part 3 Ch 44.png",
-        "artist": "Tormontrec",
-        "title": "The Avengers Battle Sylene",
-        "desc": "Queen Sylene (daughter of Loki and Lady Sif) being dragged by She-Hulk (Jennifer Walters) into the Sheild of Captain America (Sam Wilson)",
-        "isSelf": true,
-        "tags": [
-            "She-Hulk",
-            "Sylene Lokisdottir",
-            "Sam Wilson - Captain America"
-        ]
-    },{
-        "url": "assets/Art/Part 3 Ch 45.png",
-        "artist": "Tormontrec",
-        "title": "Sylene subdues Hercules",
-        "desc": "Queen Sylene (daughter of Loki and Lady Sif) defeats Hercules (son of Zeus) in front of Thor Odinson",
-        "isSelf": true,
-        "tags": [
-            "Hercules",
-            "Sylene Lokisdottir",
-            "Thor Odinson"
-        ]
-    },{
-        "url": "assets/Art/Part 3 Ch 46.png",
-        "artist": "UzuriArt",
-        "title": "Sylene and Sif",
-        "desc": "Queen Sylene and Lady Sif",
-        "isSelf": false,
-        "tags": [
-            "Lady Sif",
-            "Sylene Lokisdottir"
-        ]
-    },{
-        "url": "assets/Art/Part 3 Ch 47.png",
-        "artist": "Tormontrec",
-        "title": "Thanos vs Thane",
-        "desc": "Thane battles his false father Thanos in the God Quarry",
-        "isSelf": true,
-        "tags": [
-            "Thane Hailrothson",
-            "Thanos",
-            "God Quarry"
-        ]
-    },{
-        "url": "assets/Art/Part 3 Ch 48.png",
-        "artist": "Tormontrec",
-        "title": "Sylene and Sapphire ",
-        "desc": "Queen Sylene (daughter of Loki and Lady Sif) with her new daughter Sapphire",
-        "isSelf": true,
-        "tags": [
-            "Sapphire Sylenesdottir",
-            "Sylene Lokisdottir",
             "Utgard Jotunheim"
+        ]
+    },
+    {
+        "url": "assets/Art2/Chapter 16 a.png",
+        "artist": "Tormontrec",
+        "title": "Sylene fights Thanos",
+        "desc": "Sylene (daughter of Loki and Lady Sif) fights Thanos and the Children of Thanos",
+        "isSelf": true,
+        "tags": [
+            "Sylene Lokisdottir",
+            "Thanos",
+            "Utgard Jotunheim",
+            "Proxima Midnight",
+            "Corvus Glaive"
+        ]
+    },
+    {
+        "url": "assets/Art2/Chapter 19 a.png",
+        "artist": "Tormontrec",
+        "title": "Thena and Amora",
+        "desc": "Amora confronts her daughter Thena and implores her not to fight Thanos on the plains of Korbin",
+        "isSelf": true,
+        "tags": [
+            "Thena Thorsdottir",
+            "Amora the Enchantress",
+            "Thanos",
+            "Korbin"
+        ]
+    },
+    {
+        "url": "assets/Art2/Chapter 19 b.png",
+        "artist": "Tormontrec",
+        "title": "Thena before Thanos",
+        "desc": "Thena Thorsdottir prepares to fight Thanos on the plains of Korbin",
+        "isSelf": true,
+        "tags": [
+            "Thena Thorsdottir",
+            "Cull Obsidian",
+            "Corvus Glaive",
+            "Thanos",
+            "Korbin"
+        ]
+    },
+    {
+        "url": "assets/Art2/Chapter 19 c.png",
+        "artist": "Tormontrec",
+        "title": "Thena about to fight",
+        "desc": "Thena Thorsdottir prepares to fight Thanos on the plains of Korbin",
+        "isSelf": true,
+        "tags": [
+            "Thena Thorsdottir",
+            "Amora the Enchantress",
+            "Korbin"
+        ]
+    },
+    {
+        "url": "assets/Art2/Chapter 19 d.png",
+        "artist": "Tormontrec",
+        "title": "Sylene arrives on Korbin",
+        "desc": "Queen Sylene of Jotunheim arrives to lead troops against Thanos on Korbin",
+        "isSelf": true,
+        "tags": [
+            "Sylene Lokisdottir",
+            "Utgard Jotunheim",
+            "Korbin"
         ]
     }
+
+
 ]
