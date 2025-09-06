@@ -83,3 +83,7 @@ ul {
 .dark-mode-link {
     color: aliceblue;
 }
+
+.wide-fill{
+  width: 100%;
+}

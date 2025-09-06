@@ -201,6 +201,108 @@
             "Utgard Jotunheim",
             "Korbin"
         ]
+    }, 
+    {
+        "url": "assets/Art2/Chapter 20 b.png",
+        "artist": "Tormontrec",
+        "title": "Sylene weidl Mjolnir",
+        "desc": "Queen Sylene of Jotunheim weilding Thena Thorsdottir's Mjolnir on the lains of Korbin",
+        "isSelf": true,
+        "tags": [
+            "Sylene Lokisdottir",
+            "Mjolnir",
+            "Korbin"
+        ]
+    },
+    {
+        "url": "assets/Art2/Chapter 20 c.png",
+        "artist": "Tormontrec",
+        "title": "Side from Battle",
+        "desc": "Beta Ray Bill, leader of the Korbinites, fills in Thena Thorsdottir and Halroth Razeson on the battle",
+        "isSelf": true,
+        "tags": [
+            "Thena Thorsdottir",
+            "Hailroth Razeson",
+            "Beta Ray Bill",
+            "Korbin"
+        ]
+    },
+    {
+        "url": "assets/Art2/Chapter 20 d.png",
+        "artist": "Tormontrec",
+        "title": "Reunion",
+        "desc": "Queen Sylene of Jotunheim unites with her childhood playmate Thena Thorsdottir after the first battle of Korbin",
+        "isSelf": true,
+        "tags": [
+            "Sylene Lokisdottir",
+            "Thena Thorsdottir",
+            "Mjolnir",
+            "Korbin"
+        ]
+    },
+    {
+        "url": "assets/Art2/Chapter 21 a.png",
+        "artist": "Tormontrec",
+        "title": "Sylene and Sif",
+        "desc": "Queen Sylene of Jotunheim chats with her mother, Lady Sif of Asgard on Korbin",
+        "isSelf": true,
+        "tags": [
+            "Sylene Lokisdottir",
+            "Lady Sif",
+            "Korbin"
+        ]
+    },
+    {
+        "url": "assets/Art2/Chapter 21 b.png",
+        "artist": "Tormontrec",
+        "title": "Sif meets Beta Ray Bill",
+        "desc": "Lady Sif of Asgard is breifed on Thanos's campaign by Korbinite leader Beta Ray Bill",
+        "isSelf": true,
+        "tags": [
+            "Beta Ray Bill",
+            "Lady Sif",
+            "Korbin"
+        ]
+    },
+    {
+        "url": "assets/Art2/Chapter 24 b.png",
+        "artist": "Tormontrec",
+        "title": "Briefing",
+        "desc": "Queen Sylene of Jotunheim, Hailroth Razeson, Thena Thorsdottir, Amora the Enchantress, Lady Sif, and Beta Ray Bill discuss Thanos' minion Supergiant",
+        "isSelf": true,
+        "tags": [
+            "Hailroth Razeson",
+            "Sylene Lokisdottir",
+            "Thena Thorsdottir",
+            "Amora the Enchantress",
+            "Lady Sif",
+            "Beta Ray Bill",
+            "Supergiant"
+        ]
+    },
+    {
+        "url": "assets/Art2/Chapter 25 b.png",
+        "artist": "Tormontrec and Boom Da Funk",
+        "title": "Sylene and Hailroth",
+        "desc": "Queen Sylene of Jotunheim and Hailroth Razeson on Korbin",
+        "isSelf": false,
+        "tags": [
+            "Sylene Lokisdottir",
+            "Hailroth Razeson",
+            "Korbin"
+        ]
+    },
+    {
+        "url": "assets/Art2/Chapter 25 c.png",
+        "artist": "Tormontrec",
+        "title": "Sylene before Thanos' fleet",
+        "desc": "Queen Sylene of Jotunheim faces down Thanos' limitless fleet during an intense seige of a Korbinite city",
+        "isSelf": true,
+        "tags": [
+            "Sylene Lokisdottir",
+            "Thanos' fleet",
+            "Korbin"
+        ]
     }
 
 

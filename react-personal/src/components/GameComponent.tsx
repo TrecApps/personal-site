@@ -3,6 +3,7 @@ import React from "react";
 import type { JSX } from "react";
 import TrooperMatchComponent from "./games/TrooperMatchComponent";
 import { TabComponent, type TabOption } from "@tc/tc-rc-general";
+import Base64EditorComponent from "./games/Base64Edtitor";
 
 export default function GameComponent(){
 
@@ -10,13 +11,18 @@ export default function GameComponent(){
 
     const [tabs, setTabs] = React.useState<TabOption[]>([
         {
-        showTitle: "Trooper Match",
-        actTitle: "tm"
+            showTitle: "Trooper Match",
+            actTitle: "tm"
+        }, 
+        {
+            showTitle: "Base 64 Editor",
+            actTitle: "base64"
         }
     ]);
 
     function getGame() : JSX.Element {
         if(activeTab == "tm") return <TrooperMatchComponent/>
+        if(activeTab == "base64") return <Base64EditorComponent/>
         
         return <></>;
     }

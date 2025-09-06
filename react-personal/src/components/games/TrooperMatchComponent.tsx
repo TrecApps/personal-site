@@ -1,20 +1,9 @@
 import React from "react";
-//import { Container } from "react-bootstrap";
 import styles from "../component.module.css";
 import {Button} from 'react-bootstrap';
 
 
-// Images
-// import imgDefault from "as" //"../../../assets/trooper/holder.png";
-// import img1 from "../../assets/trooper/WP_20150107_005.jpg";
-// import img2 from "../../assets/trooper/076.jpg";
-// import img3 from "../../assets/trooper/078.jpg";
-// import img4 from "../../assets/trooper/079.jpg";
-// import img5 from "../../assets/trooper/080.jpg";
 import { StylesService } from "@tc/tc-rc-general";
-
-
-
 
 export default function TrooperMatchComponent() {
 
