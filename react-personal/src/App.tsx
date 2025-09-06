@@ -154,7 +154,7 @@ const location = useLocation(); // Access the location object
           <Navbar.Collapse id="jljacko-navbar-nav">
             <Nav className="me-auto">
                 <Nav.Link as={Link} to="/AboutMe">About Me</Nav.Link>
-                <Nav.Link as={Link} to="/Games">Trooper Match</Nav.Link>
+                <Nav.Link as={Link} to="/Games">Games</Nav.Link>
                 <Nav.Link as={Link} to="/Gallery">Art Gallery</Nav.Link>
                 <Nav.Link as={Link} to="/History">Site History</Nav.Link>
                 <li className="nav-item" style={{paddingLeft:"5px"}}><a className="nav-link">|</a></li>

@@ -151,6 +151,16 @@ export default function SiteHistoryComponent(){
         </ul>
     </div>
 
+    <div className={ss.getElementItemClasses('')}>
+        <h4>6.September.2025</h4>
+        <ul>
+            <li>React Art Gallery has new images</li>
+            <li>Base64 editor added to React site</li>
+            <li>Markdown editor added to Angular site</li>
+            <li>'Trooper Match' nav item changed to 'Games' (both versions)</li>
+        </ul>
+    </div>
+
 
     
     </Container>
