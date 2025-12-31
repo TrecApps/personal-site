@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { FormsModule } from '@angular/forms';
 import { AfterContentInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
@@ -10,8 +10,7 @@ import { ElementContainerDirective, ElementItemDirective } from '@tc/tc-ngx-gene
 
 @Component({
   selector: 'app-art-gallery',
-  imports: [CommonModule, FormsModule, ImageFilterPipe, 
-    ElementContainerDirective, ElementItemDirective],
+  imports: [FormsModule, ImageFilterPipe, ElementContainerDirective, ElementItemDirective],
   templateUrl: './art-gallery.component.html',
   styleUrl: './art-gallery.component.css',
   animations: [

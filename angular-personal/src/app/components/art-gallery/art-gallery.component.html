@@ -1,119 +1,146 @@
 <div appElementContainer class="container">
 
-    <div class="flex-and-center" style="gap: 5px;">
-        <button class="btn btn-info" (click)="doShowSelfArt()">Self Art</button>
-        <button class="btn btn-info" (click)="doShowBoth()">All Art</button>
-        <button class="btn btn-info" (click)="doShowCommissions()">Commissioned Art</button>
-    </div>
+  <div class="flex-and-center" style="gap: 5px;">
+    <button class="btn btn-info" (click)="doShowSelfArt()">Self Art</button>
+    <button class="btn btn-info" (click)="doShowBoth()">All Art</button>
+    <button class="btn btn-info" (click)="doShowCommissions()">Commissioned Art</button>
+  </div>
 
 
-    <div style="gap:15px; flex-wrap: wrap; margin-bottom: 10px;" class="flex-and-center" *ngIf="imageWidth >= 500">
-        <div class="form-check">
-            <input id="galleryT" class="form-check-input" type="radio" formGroup="galleryType" name="galleryType" (click)="setUseGallery(true)">
-            <label for="gelleryT" class="form-check-label">Use Gallery</label>
-        </div>
-        <div class="form-check">
-            <input id="galleryF" class="form-check-input" type="radio" formGroup="galleryType" name="galleryType" (click)="setUseGallery(false)" checked>
-            <label for="galleryF" class="form-check-label">Use Cards</label>
-        </div>
+  @if (imageWidth >= 500) {
+    <div style="gap:15px; flex-wrap: wrap; margin-bottom: 10px;" class="flex-and-center">
+      <div class="form-check">
+        <input id="galleryT" class="form-check-input" type="radio" formGroup="galleryType" name="galleryType" (click)="setUseGallery(true)">
+        <label for="gelleryT" class="form-check-label">Use Gallery</label>
+      </div>
+      <div class="form-check">
+        <input id="galleryF" class="form-check-input" type="radio" formGroup="galleryType" name="galleryType" (click)="setUseGallery(false)" checked>
+        <label for="galleryF" class="form-check-label">Use Cards</label>
+      </div>
     </div>
-    <br>
-    
+  }
+  <br>
+
     <!-- <div class="gallery">
-            <img *ngFor="let entry of images | imageFilter:showSelfArt:showCommissions" class="imageEntry" src="{{entry.url}}" alt="{{entry.title}}">
-    
-    </div>  -->
-    
-    
-    
-    
-    
-        <ul class="image-gal" *ngIf="useGallery && imageWidth >= 500">
-            <li [style]="galleryImageHeight" *ngFor="let entry of images | imageFilter:showSelfArt:showCommissions:searchTerm" appElementItem>
-                <div (mouseenter)="toggleTagView(entry, true)" (mouseleave)="toggleTagView(entry, false)" style="height: 100%; align-items: center; justify-content: center; display: flex; position: relative;" (click)="setImageEntry(entry)">
-                    <img class="imageEntry mx-auto" src="{{entry.url}}" alt="{{entry.title}}">
-                    <div class="overlay" [@imageTranslate]="entry.isHovering ? 'expanded' : 'collapse'">
-                        <span style="color:white">{{entry.title}}</span>
-                        <ul style="list-style-type: none;">
-                            <li style="color:white" *ngFor="let tag of entry.tags">#{{tag}}</li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-        </ul> 
-    
-        <ul class="image-gal" *ngIf="!useGallery || imageWidth < 500">
-            <li *ngFor="let entry of images | imageFilter:showSelfArt:showCommissions:searchTerm; index as i" appElementItem>
-                <div class="imageCard" [style]="cardWidth">
-                    <div (mouseenter)="toggleTagView(entry, true)" (mouseleave)="toggleTagView(entry, false)" 
-                        class="cardEntryWrapper" (click)="setImageEntry(entry, i)" [style]="cardHeight">
-                        <img class="cardEntry mx-auto" src="{{entry.url}}" alt="{{entry.title}}">
-                        <div class="overlay" [@imageTranslate]="entry.isHovering ? 'expanded' : 'collapse'">
-                            <span style="color:white">{{entry.title}}</span>
-                            <ul style="list-style-type: none;">
-                                <li style="color:white" *ngFor="let tag of entry.tags">#{{tag}}</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div style="display: flex;">
-                        <p style="text-align: center;"><b>Title: </b>{{ entry.title }}</p>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    
-        <div style="height:300px"></div>
-    <!-- </div> -->
+    <img *ngFor="let entry of images | imageFilter:showSelfArt:showCommissions" class="imageEntry" src="{{entry.url}}" alt="{{entry.title}}">
 
-    <button *ngIf="!showPanel" class="btn btn-primary act-search" (click)="setImageEntry(undefined)">Show Search</button>
-    
-    <div [@onShowGallery]="showPanel ? 'doShow' : 'doHide'" 
-        #imagePanel
-        appElementContainer
-        hidden
+  </div>  -->
+
+
+
+
+
+  @if (useGallery && imageWidth >= 500) {
+    <ul class="image-gal">
+      @for (entry of images | imageFilter:showSelfArt:showCommissions:searchTerm; track entry) {
+        <li [style]="galleryImageHeight" appElementItem>
+          <div (mouseenter)="toggleTagView(entry, true)" (mouseleave)="toggleTagView(entry, false)" style="height: 100%; align-items: center; justify-content: center; display: flex; position: relative;" (click)="setImageEntry(entry)">
+            <img class="imageEntry mx-auto" src="{{entry.url}}" alt="{{entry.title}}">
+            <div class="overlay" [@imageTranslate]="entry.isHovering ? 'expanded' : 'collapse'">
+              <span style="color:white">{{entry.title}}</span>
+              <ul style="list-style-type: none;">
+                @for (tag of entry.tags; track tag) {
+                  <li style="color:white">#{{tag}}</li>
+                }
+              </ul>
+            </div>
+          </div>
+        </li>
+      }
+    </ul>
+  }
+
+  @if (!useGallery || imageWidth < 500) {
+    <ul class="image-gal">
+      @for (entry of images | imageFilter:showSelfArt:showCommissions:searchTerm; track entry; let i = $index) {
+        <li appElementItem>
+          <div class="imageCard" [style]="cardWidth">
+            <div (mouseenter)="toggleTagView(entry, true)" (mouseleave)="toggleTagView(entry, false)"
+              class="cardEntryWrapper" (click)="setImageEntry(entry, i)" [style]="cardHeight">
+              <img class="cardEntry mx-auto" src="{{entry.url}}" alt="{{entry.title}}">
+              <div class="overlay" [@imageTranslate]="entry.isHovering ? 'expanded' : 'collapse'">
+                <span style="color:white">{{entry.title}}</span>
+                <ul style="list-style-type: none;">
+                  @for (tag of entry.tags; track tag) {
+                    <li style="color:white">#{{tag}}</li>
+                  }
+                </ul>
+              </div>
+            </div>
+            <div style="display: flex;">
+              <p style="text-align: center;"><b>Title: </b>{{ entry.title }}</p>
+            </div>
+          </div>
+        </li>
+      }
+    </ul>
+  }
+
+  <div style="height:300px"></div>
+<!-- </div> -->
+
+@if (!showPanel) {
+  <button class="btn btn-primary act-search" (click)="setImageEntry(undefined)">Show Search</button>
+}
+
+<div [@onShowGallery]="showPanel ? 'doShow' : 'doHide'"
+  #imagePanel
+  appElementContainer
+  hidden
         style="position: fixed; bottom: 0px; width: 100%; margin-left:-6px;max-width:inherit; z-index: 10; max-height: 100vh;
             display: flex; flex-direction: column;"
-    >
-        <div 
-            *ngIf="selectedImage" 
-            appElementItem 
-            class="image-viewer" 
-            [style]="'max-height : ' + viewHeight * 0.8 + 'px'"
-        >
-            <div class="switch-holder">
-                <img src="assets/Less_than.png" style="left:0" class="browse-img" *ngIf="currentIndex" (click)="switchImage(false)">
-                <img src="assets/Less_than.png" class="browse-img img-rev" *ngIf="!indexIsFinal && currentIndex" (click)="switchImage(true)">
-                
-                <img src="assets/Less_than.png" style="position: absolute; right:0" class="browse-img img-rev" *ngIf="!currentIndex" (click)="switchImage(true)">
-                
-            </div>
-            
-            <img [src]="selectedImage.url">
-            
-        </div>
-        <div 
-            style="flex-grow: 1;"
-            appElementItem
-        >
-            <div style="display: flex; flex-direction: column ;margin:10px; justify-content: center; align-items: center; gap:5px;">
-                <div style="display: flex; flex-direction: row ;margin:5px; justify-content: center; align-items: center; gap:10px;width:100%">
-                    <input type="text" class="form-control" placeholder="Search By Tag" [(ngModel)]="searchTerm">
-                    <div class="red-button-container" [@xHover]="xButtonHover ? 'hover' : 'leave'" (mouseenter)="setHover(true)" (mouseleave)="setHover(false)">
-                            
-                        <button (click)="hideGallery()"><img src="assets/icons/X-image.png" alt="exit button"></button>
-                    </div>
-                </div>
-            </div>
-            
-            <p *ngIf="selectedImage" style="text-align: center; margin:5px;"><b>Title: </b>{{ selectedImage.title }}</p>
-            <p *ngIf="selectedImage" style="text-align: center; margin:5px;"><b>Artist: </b>{{ selectedImage.artist}}</p>
-            <p *ngIf="selectedImage" style="text-align: center; margin:5px;"><b>Desc: </b>{{ selectedImage.desc }}</p>
-            <div *ngIf="selectedImage" style="display: flex; justify-content: center; padding: 5px">
-                <button class="btn btn-info" (click)="setImageEntry(undefined)">Remove Stats</button>
-            </div>
-        </div>
-
-        
+  >
+  @if (selectedImage) {
+    <div
+      appElementItem
+      class="image-viewer"
+      [style]="'max-height : ' + viewHeight * 0.8 + 'px'"
+      >
+      <div class="switch-holder">
+        @if (currentIndex) {
+          <img src="assets/Less_than.png" style="left:0" class="browse-img" (click)="switchImage(false)">
+        }
+        @if (!indexIsFinal && currentIndex) {
+          <img src="assets/Less_than.png" class="browse-img img-rev" (click)="switchImage(true)">
+        }
+        @if (!currentIndex) {
+          <img src="assets/Less_than.png" style="position: absolute; right:0" class="browse-img img-rev" (click)="switchImage(true)">
+        }
+      </div>
+      <img [src]="selectedImage.url">
     </div>
-    
+  }
+  <div
+    style="flex-grow: 1;"
+    appElementItem
+    >
+    <div style="display: flex; flex-direction: column ;margin:10px; justify-content: center; align-items: center; gap:5px;">
+      <div style="display: flex; flex-direction: row ;margin:5px; justify-content: center; align-items: center; gap:10px;width:100%">
+        <input type="text" class="form-control" placeholder="Search By Tag" [(ngModel)]="searchTerm">
+        <div class="red-button-container" [@xHover]="xButtonHover ? 'hover' : 'leave'" (mouseenter)="setHover(true)" (mouseleave)="setHover(false)">
+
+          <button (click)="hideGallery()"><img src="assets/icons/X-image.png" alt="exit button"></button>
+        </div>
+      </div>
+    </div>
+
+    @if (selectedImage) {
+      <p style="text-align: center; margin:5px;"><b>Title: </b>{{ selectedImage.title }}</p>
+    }
+    @if (selectedImage) {
+      <p style="text-align: center; margin:5px;"><b>Artist: </b>{{ selectedImage.artist}}</p>
+    }
+    @if (selectedImage) {
+      <p style="text-align: center; margin:5px;"><b>Desc: </b>{{ selectedImage.desc }}</p>
+    }
+    @if (selectedImage) {
+      <div style="display: flex; justify-content: center; padding: 5px">
+        <button class="btn btn-info" (click)="setImageEntry(undefined)">Remove Stats</button>
+      </div>
+    }
+  </div>
+
+
+</div>
+
 </div>

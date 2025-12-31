@@ -1,6 +1,10 @@
 <div class="container">
-    <lib-tab [tabs]="tabs" (tabSelect)="onSelectTab($event)">
-        <app-trooper-match *ngIf="activeTab == 'tm'"></app-trooper-match>
-        <lib-markdown-editor *ngIf="activeTab == 'markdown'"></lib-markdown-editor>
-    </lib-tab>  
+  <lib-tab [tabs]="tabs" (tabSelect)="onSelectTab($event)">
+    @if (activeTab == 'tm') {
+      <app-trooper-match></app-trooper-match>
+    }
+    @if (activeTab == 'markdown') {
+      <lib-markdown-editor></lib-markdown-editor>
+    }
+  </lib-tab>
 </div>

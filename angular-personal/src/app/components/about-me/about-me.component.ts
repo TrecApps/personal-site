@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { ElementContainerDirective, ElementItemDirective } from '@tc/tc-ngx-general';
 import { Education } from '../../models/education';
@@ -8,8 +8,9 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 @Component({
   selector: 'app-about-me',
   imports: [
-    CommonModule,
-    ElementContainerDirective, ElementItemDirective],
+    ElementContainerDirective,
+    ElementItemDirective
+],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.css',
   animations: [
