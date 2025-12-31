@@ -1,31 +1,20 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal, WritableSignal } from '@angular/core';
 import { ElementContainerDirective, ElementItemDirective } from '@tc/tc-ngx-general';
 import { Education } from '../../models/education';
 import { Work } from '../../models/work';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-about-me',
   imports: [
     ElementContainerDirective,
-    ElementItemDirective
+    ElementItemDirective,
+    CommonModule
 ],
   templateUrl: './about-me.component.html',
-  styleUrl: './about-me.component.css',
-  animations: [
-  trigger('translate', [
-    state('collapse', style({ height: '0px', overflow: 'hidden'})),
-    state('expanded', style({ height: '*', overflow: 'hidden'})),
-    transition('collapse => expanded', [ animate('0.33s')]),
-    transition('expanded => collapse', [animate('0.33s')])
-  ]),
-  trigger('rotate', [
-    state('collapse', style({ transform: 'rotate(180deg)'})),
-    state('expanded', style({ transform: 'rotate(270deg)'})),
-    transition('collapse => expanded', [ animate('0.33s')]),
-    transition('expanded => collapse', [animate('0.33s')])
-  ])]
+  styleUrl: './about-me.component.css'
 })
 export class AboutMeComponent implements OnInit{
 
@@ -42,11 +31,11 @@ export class AboutMeComponent implements OnInit{
   
   work: Work[];
 
-  showWork: boolean;
-  showPProjects: boolean;
-  showOldProjects: boolean;
-  showWProjects: boolean;
-  showSProjects: boolean;
+  showWork: WritableSignal<boolean>;
+  showPProjects: WritableSignal<boolean>;
+  showOldProjects: WritableSignal<boolean>;
+  showWProjects: WritableSignal<boolean>;
+  showSProjects: WritableSignal<boolean>;
 
   constructor() {
     this.contactInfo = [];
@@ -59,7 +48,12 @@ export class AboutMeComponent implements OnInit{
     this.projectsWork = [];
     this.certifications = [];
 
-    this.showPProjects = this.showSProjects = this.showWProjects = this.showWork = this.showOldProjects = false;
+    this.showPProjects = signal(false);
+
+    this.showSProjects = signal(false);
+    this.showWProjects = signal(false);
+    this.showWork = signal(false);
+    this.showOldProjects = signal(false);
   }
 
   ngOnInit(): void {
@@ -198,24 +192,24 @@ export class AboutMeComponent implements OnInit{
   toggleShow(num: number) {
     switch(num) {
       case 0:
-      this.showPProjects = !this.showPProjects;
+      this.showPProjects.update((show) => !show);
         return;
       case 1:
-        this.showWProjects = !this.showWProjects;
+        this.showWProjects.update((show) => !show);
         return;
       case 2:
-        this.showSProjects = !this.showSProjects;
+        this.showSProjects.update((show) => !show);
         return;
       case 3:
-        this.showOldProjects = !this.showOldProjects;
+        this.showOldProjects.update((show) => !show);
         return;
       case 4:
-        this.showWork = !this.showWork;
+        this.showWork.update((show) => !show)
     }
   }
 
   toggleWork(work:Work) {
-    work.show = !work.show;
+    work.show.update((show) => !show);
   }
 
 }
