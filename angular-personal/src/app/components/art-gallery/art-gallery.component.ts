@@ -1,10 +1,10 @@
 
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { FormsModule } from '@angular/forms';
-import { AfterContentInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { AfterContentInit, Component, ElementRef, HostListener, signal, ViewChild, WritableSignal } from '@angular/core';
 import { ImageFilterPipe } from '../../pipes/image-filter.pipe';
 import { HttpClient } from '@angular/common/http';
-import { ImageEntry } from '../../models/image-entry';
+import { ImageEntry, JsonImageEntry } from '../../models/image-entry';
 import { ElementContainerDirective, ElementItemDirective } from '@tc/tc-ngx-general';
 
 
@@ -12,27 +12,7 @@ import { ElementContainerDirective, ElementItemDirective } from '@tc/tc-ngx-gene
   selector: 'app-art-gallery',
   imports: [FormsModule, ImageFilterPipe, ElementContainerDirective, ElementItemDirective],
   templateUrl: './art-gallery.component.html',
-  styleUrl: './art-gallery.component.css',
-  animations: [
-    trigger('imageTranslate', [
-      state('collapse', style({ height: '0px', overflow: 'hidden'})),
-      state('expanded', style({ height: '*', overflow: 'hidden'})),
-      transition('collapse => expanded', [ animate('0.33s')]),
-      transition('expanded => collapse', [animate('0.33s')])
-    ]),
-    trigger('xHover',[
-      state('hover', style({background: 'rgba(255,0,0,1.0)'})),
-      state('leave', style({background: 'rgba(0,0,0, 0.0'})),
-      transition('hover => leave', [ animate('0.33s')]),
-      transition('leave => hover', [ animate('0.33s')])
-    ]),
-    trigger('onShowGallery', [
-      state('doShow', style({ height: '*'})),
-      state('doHide', style({ height: '0px'})),
-      transition('doShow => doHide', [ animate('0.33s')]),
-      transition('doHide => doShow', [ animate('0.33s')])
-    ])
-  ]
+  styleUrl: './art-gallery.component.css'
 })
 export class ArtGalleryComponent implements AfterContentInit{
   showCommissions = true;
@@ -41,14 +21,10 @@ export class ArtGalleryComponent implements AfterContentInit{
   searchTerm= "";
 
   useGallery:boolean = false;
-  showPanel: boolean = false;
-  xButtonHover: boolean = false;
+  showPanel: WritableSignal<boolean> = signal(false);
 
   imageWidth: number = 500;
   viewHeight: number = 600;
-  setHover(setBHover: boolean){
-    this.xButtonHover = setBHover;
-  }
 
   setUseGallery(ug: boolean){
     this.useGallery = ug;
@@ -120,14 +96,14 @@ export class ArtGalleryComponent implements AfterContentInit{
   panelHideTimeout: any = -1;
 
   prepImages(){
-    this.client.get<ImageEntry[]>('assets/Images.json').subscribe((entries: ImageEntry[]) => {
-      this.images = entries;
+    this.client.get<JsonImageEntry[]>('assets/Images.json').subscribe((entries: JsonImageEntry[]) => {
+      this.images = entries.map((e: JsonImageEntry) => new ImageEntry(e));
     })
   }
 
   setImageEntry(sel: ImageEntry|undefined, index: number = 0){
     this.selectedImage = sel;
-    this.showPanel = true;
+    this.showPanel.set(true);
     this.currentIndex = index;
 
     let filteredImages = this.imageFilter.transform(this.images, this.showSelfArt, this.showCommissions, this.searchTerm)
@@ -142,15 +118,15 @@ export class ArtGalleryComponent implements AfterContentInit{
   }
 
   hideGallery(){
-    if(!this.showPanel) return;
-    this.showPanel = false;
+    if(!this.showPanel()) return;
+    this.showPanel.set(false);
     this.panelHideTimeout = setTimeout(() => {
       this.imagePanel.nativeElement.hidden = true;
     }, 333);
   }
 
   toggleTagView(entry: ImageEntry, show: boolean){
-    entry.isHovering = show;
+    entry.isHovering.set(show);
   }
 
   switchImage(forward: boolean){

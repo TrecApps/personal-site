@@ -36,7 +36,7 @@
         <li [style]="galleryImageHeight" appElementItem>
           <div (mouseenter)="toggleTagView(entry, true)" (mouseleave)="toggleTagView(entry, false)" style="height: 100%; align-items: center; justify-content: center; display: flex; position: relative;" (click)="setImageEntry(entry)">
             <img class="imageEntry mx-auto" src="{{entry.url}}" alt="{{entry.title}}">
-            <div class="overlay" [@imageTranslate]="entry.isHovering ? 'expanded' : 'collapse'">
+            <div class="overlay translate" [class.translate-expanded]="entry.isHovering()">
               <span style="color:white">{{entry.title}}</span>
               <ul style="list-style-type: none;">
                 @for (tag of entry.tags; track tag) {
@@ -58,7 +58,7 @@
             <div (mouseenter)="toggleTagView(entry, true)" (mouseleave)="toggleTagView(entry, false)"
               class="cardEntryWrapper" (click)="setImageEntry(entry, i)" [style]="cardHeight">
               <img class="cardEntry mx-auto" src="{{entry.url}}" alt="{{entry.title}}">
-              <div class="overlay" [@imageTranslate]="entry.isHovering ? 'expanded' : 'collapse'">
+              <div class="overlay translate" [class.translate-expanded]="entry.isHovering()">
                 <span style="color:white">{{entry.title}}</span>
                 <ul style="list-style-type: none;">
                   @for (tag of entry.tags; track tag) {
@@ -79,11 +79,11 @@
   <div style="height:300px"></div>
 <!-- </div> -->
 
-@if (!showPanel) {
+@if (!showPanel()) {
   <button class="btn btn-primary act-search" (click)="setImageEntry(undefined)">Show Search</button>
 }
 
-<div [@onShowGallery]="showPanel ? 'doShow' : 'doHide'"
+<div class="translate2" [class.translate2-expanded]="showPanel()"
   #imagePanel
   appElementContainer
   hidden
@@ -117,7 +117,7 @@
     <div style="display: flex; flex-direction: column ;margin:10px; justify-content: center; align-items: center; gap:5px;">
       <div style="display: flex; flex-direction: row ;margin:5px; justify-content: center; align-items: center; gap:10px;width:100%">
         <input type="text" class="form-control" placeholder="Search By Tag" [(ngModel)]="searchTerm">
-        <div class="red-button-container" [@xHover]="xButtonHover ? 'hover' : 'leave'" (mouseenter)="setHover(true)" (mouseleave)="setHover(false)">
+        <div class="red-button-container">
 
           <button (click)="hideGallery()"><img src="assets/icons/X-image.png" alt="exit button"></button>
         </div>
