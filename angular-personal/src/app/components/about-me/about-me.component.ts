@@ -4,14 +4,13 @@ import { ElementContainerDirective, ElementItemDirective } from '@tc/tc-ngx-gene
 import { Education } from '../../models/education';
 import { Work } from '../../models/work';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-about-me',
   imports: [
     ElementContainerDirective,
-    ElementItemDirective,
-    CommonModule
+    ElementItemDirective
 ],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.css'
