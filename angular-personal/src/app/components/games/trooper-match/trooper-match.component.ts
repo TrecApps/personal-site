@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { MatchTracker } from '../../../models/match-tracker';
 import { ElementItemDirective } from '@tc/tc-ngx-general';
 
 @Component({
   selector: 'app-trooper-match',
-  imports: [CommonModule, ElementItemDirective],
+  imports: [ElementItemDirective],
   templateUrl: './trooper-match.component.html',
   styleUrl: './trooper-match.component.css'
 })

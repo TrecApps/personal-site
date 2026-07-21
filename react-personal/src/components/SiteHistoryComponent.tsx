@@ -161,6 +161,16 @@ export default function SiteHistoryComponent(){
         </ul>
     </div>
 
+    
+    <div className={ss.getElementItemClasses('')}>
+        <h4>3.January.2026</h4>
+        <ul>
+            <li>Upgraded Angular side to use version 20.3.15</li>
+            <li>Transitioned from using Angular Animations to CSS Animations to prepare for Angular 22</li>
+            <li><b>Note: </b>Some animations in Angular (you are seeing the React version) may not play correctly on iOS, FireFox, Safari, Internet Explorer and Versions of Google Chrome and MS Edge before September 2024</li>
+        </ul>
+    </div>
+
 
     
     </Container>

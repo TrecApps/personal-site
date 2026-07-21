@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { MarkdownEditorComponent, TabComponent, TabOption } from '@tc/tc-ngx-general';
 import { TrooperMatchComponent } from '../games/trooper-match/trooper-match.component';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-game',
-  imports: [TabComponent, TrooperMatchComponent, MarkdownEditorComponent ,CommonModule],
+  imports: [TabComponent, TrooperMatchComponent, MarkdownEditorComponent],
 
   templateUrl: './game.component.html',
   styleUrl: './game.component.css'

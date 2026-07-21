@@ -1,4 +1,7 @@
-export class ImageEntry{
+import { signal, WritableSignal } from "@angular/core";
+
+
+export interface JsonImageEntry {
     url: string;
     artist: string;
     title: string;
@@ -6,21 +9,26 @@ export class ImageEntry{
     isSelf: boolean;
     tags: string[];
     isHovering: boolean;
+}
 
-    constructor(url: string,
-        artist: string,
-        title: string,
-        desc: string,
-        isSelf: boolean,
-        tags: string[]){
+export class ImageEntry{
+    url: string;
+    artist: string;
+    title: string;
+    desc: string;
+    isSelf: boolean;
+    tags: string[];
+    isHovering: WritableSignal<boolean>;
 
-            this.artist = artist;
-            this.isSelf = isSelf;
-            this.url = url;
-            this.tags = tags;
-            this.title = title;
-            this.desc = desc;
-            this.isHovering = false;
+    constructor(entry: JsonImageEntry){
+
+            this.artist = entry.artist;
+            this.isSelf = entry.isSelf;
+            this.url = entry.url;
+            this.tags = entry.tags;
+            this.title = entry.title;
+            this.desc = entry.desc;
+            this.isHovering = signal(entry.isHovering);
     }
     hasTag(tag: string | undefined): boolean {
         if(!tag){

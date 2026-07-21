@@ -17,7 +17,7 @@
 
 img.expand_icon {
     border-radius: 50%;
-    transform:rotate(180deg);
+    /* transform:rotate(180deg); */
 }
 
 img.expand_i_small {
@@ -37,4 +37,32 @@ ul {
 table {
   border-spacing: 15px;
   border-collapse: separate;
+}
+
+
+
+.translate {
+    transition: all 0.33s;
+    overflow: hidden;
+    height: 0px;
+    max-height: 0px;
+}
+
+.translate-expanded {
+    height: auto; /* Below value is not widely supported in some browsers, including Fire-Fox, so this line is provided as a fallback */
+    height: calc-size(auto, size);
+    max-height: 100vh;
+}
+
+.rotate {
+    transition: all 0.33s;
+    transform: rotate(180deg);
+}
+
+.rotate-collapse {
+    transform: rotate(180deg);
+}
+
+.rotate-expanded {
+    transform: rotate(270deg);
 }

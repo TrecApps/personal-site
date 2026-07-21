@@ -1,4 +1,5 @@
 import { Education } from "./education";
+import { WritableSignal, signal } from "@angular/core";
 
 
 export class Work
@@ -7,10 +8,10 @@ export class Work
     {
         this.job = job;
         this.details = details;
-        this.show = false;
+        this.show = signal(false);
     }
 
     job: Education;
     details: string[];
-    show: boolean;
+    show: WritableSignal<boolean>;
 }
