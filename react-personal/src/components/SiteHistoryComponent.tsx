@@ -171,6 +171,15 @@ export default function SiteHistoryComponent(){
         </ul>
     </div>
 
+    <div className={ss.getElementItemClasses('')}>
+        <h4>22.July.2026</h4>
+        <ul>
+            <li>Upgraded Angular side to use version 21.2.18</li>
+            <li>Updated dependencies in React to mitigate vulnerabilities</li>
+            <li>Added About me section to feature Data Annotation Tech and InfoSys</li>
+        </ul>
+    </div>
+
 
     
     </Container>

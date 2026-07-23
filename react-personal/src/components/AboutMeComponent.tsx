@@ -195,6 +195,20 @@ export default function AboutMeComponent() {
     ))
 
     const workProjectList: Work[] = [
+        {job: {school: "InfoSys/Charter Communications", gradYear: "November 2025-Present"},
+            details: [
+                "Implemented Caching and optimized MongoDB calls to improve performance of Spring Boot Applications",
+                "Validated code changes with Postman functional tests and measured performance with JMeter",
+                "Developed a series of Splunk Apps/Reports that helped identify latency issues in team applications",
+                "Managed and monitored app deployments with Gitlab, Harness, and the Kubernetes CLI",
+                "Used Amazon Kiro AI to translate Angular Components to Spring Boot Thymeleaf fragments (Post-Charter)"
+        ]},
+      {job: {school: "Data Annotation Tech; Remote", gradYear: "Feb 2024-October 2025"},
+        details: [
+          "Uncovered multiple issues related to AI coding responses, ranging from outdated dependencies, inaccurate explanations, and incorrect coding procedures",
+          "Coding-related prompts include Java, Spring, C/C++, C#, SQL, Python, Node.js, and Express.js",
+          "Recreated many Python unit tests in Java using JUnit 5 and AssertJ"
+        ]},
         {job: {school: "Accenture Flex/Best Buy; Richfield, MN", gradYear: "March 2021-April 2023"},
             details: [
                 "Developed RESTful APIs with Spring Web-Flux and Router Functions",

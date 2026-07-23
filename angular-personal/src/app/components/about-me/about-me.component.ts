@@ -152,6 +152,18 @@ export class AboutMeComponent implements OnInit{
       "Walmart - helped develop NodeJs Server software using HAPI and tested it using Wreck and Mocha");
     
     this.work.push(
+      new Work(new Education("InfoSys/Charter Communications","November 2025-Present"),
+        ["Implemented Caching and optimized MongoDB calls to improve performance of Spring Boot Applications",
+          "Validated code changes with Postman functional tests and measured performance with JMeter",
+          "Developed a series of Splunk Apps/Reports that helped identify latency issues in team applications",
+          "Managed and monitored app deployments with Gitlab, Harness, and the Kubernetes CLI",
+          "Used Amazon Kiro AI to translate Angular Components to Spring Boot Thymeleaf fragments (Post-Charter)"
+        ]),
+      new Work(new Education("Data Annotation Tech; Remote","Feb 2024-October 2025"),
+        ["Uncovered multiple issues related to AI coding responses, ranging from outdated dependencies, inaccurate explanations, and incorrect coding procedures",
+          "Coding-related prompts include Java, Spring, C/C++, C#, SQL, Python, Node.js, and Express.js",
+          "Recreated many Python unit tests in Java using JUnit 5 and AssertJ"
+        ]),
       new Work(new Education("Accenture Flex/Best Buy; Richfield, MN","March 2021-April 2023"),
         ["Developed RESTful APIs with Spring Web-Flux and Router Functions",
           "Developed Apps that connected to Kafka and wrote integration tests featuring Kafka Streams",
